@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MATITOHB HUB - Login</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071952,
+            #088395
+        );
+}
+
+.login-box{
+    width:100%;
+    max-width:420px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+
+    text-align:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#071952;
+    margin-bottom:8px;
+}
+
+.logo span{
+    color:#088395;
+}
+
+.subtitle{
+    color:#667085;
+    margin-bottom:30px;
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.form-group{
+    text-align:left;
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:bold;
+    color:#26364d;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #d5dce5;
+    border-radius:9px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus{
+    border-color:#088395;
+
+    box-shadow:
+        0 0 0 3px rgba(8,131,149,.12);
+}
+
+.login-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071952,
+            #088395
+        );
+
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+.login-btn:disabled{
+    opacity:.6;
+}
+
+.message{
+    display:none;
+    margin-top:18px;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.error{
+    display:block;
+    background:#ffecec;
+    color:#c0392b;
+}
+
+.success{
+    display:block;
+    background:#e7f8ef;
+    color:#087f5b;
+}
+
+.home{
+    display:inline-block;
+    margin-top:25px;
+    color:#088395;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="icon">
+        🔐
+    </div>
+
+    <div class="logo">
+        MATITOHB <span>HUB</span>
+    </div>
+
+    <p class="subtitle">
+        Admin Login
+    </p>
+
+    <form id="loginForm">
+
+        <div class="form-group">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Ingiza email yako"
+                required
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Ingiza password yako"
+                required
+            >
+
+        </div>
+
+        <button
+            type="submit"
+            class="login-btn"
+            id="loginButton"
+        >
+            🔐 Ingia Admin
+        </button>
+
+    </form>
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+    <a
+        href="index.html"
+        class="home"
+    >
+        ← Rudi Homepage
+    </a>
+
+</div>
+
+<script>
+
+const SUPABASE_URL =
+"https://weinnjprzipdhjbygdmg.supabase.co";
+
+/*
+  WEKA HAPA PUBLISHABLE KEY YAKO
+  kutoka:
+  Supabase → Project Settings → API
+*/
+
+const SUPABASE_KEY =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s ";
+
+
+const form =
+document.getElementById("loginForm");
+
+const message =
+document.getElementById("message");
+
+const button =
+document.getElementById("loginButton");
+
+
+function showMessage(text,type){
+
+    message.textContent = text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+form.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+        const email =
+            document
+            .getElementById("email")
+            .value
+            .trim();
+
+        const password =
+            document
+            .getElementById("password")
+            .value;
+
+        button.disabled = true;
+
+        button.textContent =
+            "⏳ Inaingia...";
+
+        showMessage(
+            "⏳ Inaunganisha na mfumo...",
+            "success"
+        );
+
+        try{
+
+            const response =
+            await fetch(
+                SUPABASE_URL +
+                "/auth/v1/token?grant_type=password",
+                {
+                    method:"POST",
+
+                    headers:{
+                        "apikey":SUPABASE_KEY,
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:JSON.stringify({
+                        email:email,
+                        password:password
+                    })
+                }
+            );
+
+
+            const data =
+                await response.json();
+
+
+            if(!response.ok){
+
+                throw new Error(
+                    data.error_description ||
+                    data.msg ||
+                    data.message ||
+                    "Email au password si sahihi."
+                );
+
+            }
+
+
+            localStorage.setItem(
+                "matitohb_access_token",
+                data.access_token
+            );
+
+
+            localStorage.setItem(
+                "matitohb_refresh_token",
+                data.refresh_token
+            );
+
+
+            localStorage.setItem(
+                "matitohb_user",
+                JSON.stringify(data.user)
+            );
+
+
+            showMessage(
+                "✅ Login imefanikiwa! Inafungua Admin...",
+                "success"
+            );
+
+
+            setTimeout(function(){
+
+                window.location.href =
+                    "admin.html";
+
+            },700);
+
+        }
+
+        catch(error){
+
+            console.error(
+                "MATITOHB LOGIN ERROR:",
+                error
+            );
+
+            showMessage(
+                "❌ " + error.message,
+                "error"
+            );
+
+            button.disabled = false;
+
+            button.textContent =
+                "🔐 Ingia Admin";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>  
