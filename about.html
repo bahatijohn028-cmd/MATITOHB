@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>About - MATITOHB HUB</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f7fb;
+    color:#172033;
+}
+
+/* HEADER */
+
+.header{
+    background:linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
+
+    color:white;
+    padding:18px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#35e0a1;
+}
+
+.home-btn{
+    background:#35e0a1;
+    color:#071952;
+    padding:10px 18px;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
+
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#35e0a1;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+    font-size:17px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:35px auto;
+}
+
+/* CARDS */
+
+.card{
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+}
+
+.card h2{
+    color:#071952;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#667085;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:18px;
+}
+
+.service{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+
+    box-shadow:
+    0 7px 20px rgba(0,0,0,.07);
+
+    border:1px solid #e5e9ef;
+}
+
+.service-icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.service h3{
+    color:#071952;
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#667085;
+    line-height:1.5;
+}
+
+/* FREE AND PAID */
+
+.plans{
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(280px,1fr)
+    );
+
+    gap:20px;
+}
+
+.plan{
+    padding:30px;
+    border-radius:18px;
+    background:white;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+    border:2px solid #e5e9ef;
+}
+
+.plan.free{
+    border-color:#35e0a1;
+}
+
+.plan.paid{
+    border-color:#088395;
+}
+
+.plan h3{
+    color:#071952;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.plan p{
+    color:#667085;
+    line-height:1.6;
+}
+
+.plan ul{
+    margin:18px 0;
+    padding-left:20px;
+}
+
+.plan li{
+    margin:10px 0;
+    color:#475467;
+}
+
+.plan-btn{
+    display:block;
+    text-align:center;
+    padding:13px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.free-btn{
+    background:#35e0a1;
+    color:#071952;
+}
+
+.paid-btn{
+    background:#071952;
+    color:white;
+}
+
+/* PAYMENT NOTICE */
+
+.payment{
+    background:#eef7ff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.payment h2{
+    color:#071952;
+    margin-bottom:10px;
+}
+
+.payment p{
+    color:#667085;
+    line-height:1.6;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    text-align:center;
+}
+
+.whatsapp a{
+    display:inline-block;
+
+    background:#25D366;
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    margin-top:15px;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#071952;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:50px;
+}
+
+.footer p{
+    margin:7px 0;
+}
+
+.footer a{
+    color:#35e0a1;
+    text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero{
+        padding:50px 18px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+
+        📚 MATITOHB <span>HUB</span>
+
+    </div>
+
+    <a
+        href="index.html"
+        class="home-btn"
+    >
+
+        🏠 Homepage
+
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+
+        Kuhusu <span>MATITOHB HUB</span>
+
+    </h1>
+
+    <p>
+
+        MATITOHB HUB ni platform ya
+        kusaidia wanafunzi kupata
+        academic materials kwa urahisi,
+        haraka na sehemu moja.
+
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- ABOUT -->
+
+<div class="card">
+
+    <h2>
+        📖 MATITOHB HUB ni nini?
+    </h2>
+
+    <p>
+
+        MATITOHB HUB inalenga kuwa
+        sehemu moja ambayo wanafunzi
+        wanaweza kupata Notes,
+        Assignments, Past Papers
+        na academic resources nyingine.
+
+    </p>
+
+    <p>
+
+        Tunataka kufanya upatikanaji
+        wa materials uwe rahisi zaidi
+        kupitia simu au computer.
+
+    </p>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<div class="card">
+
+    <h2>
+        🎓 Tunatoa nini?
+    </h2>
+
+    <div class="services">
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                📘
+            </div>
+
+            <h3>
+                Notes
+            </h3>
+
+            <p>
+                Notes za masomo
+                mbalimbali kwa ajili
+                ya kujifunza.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                📝
+            </div>
+
+            <h3>
+                Assignments
+            </h3>
+
+            <p>
+                Academic resources
+                zinazoweza kusaidia
+                katika maandalizi.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                📄
+            </div>
+
+            <h3>
+                Past Papers
+            </h3>
+
+            <p>
+                Past papers kwa ajili
+                ya mazoezi na maandalizi
+                ya mitihani.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🎓
+            </div>
+
+            <h3>
+                Academic Resources
+            </h3>
+
+            <p>
+                Materials mbalimbali
+                zinazohusiana na
+                masomo.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- FREE / PAID -->
+
+<div class="card">
+
+    <h2>
+        💎 Free & Premium Materials
+    </h2>
+
+    <div class="plans">
+
+
+        <!-- FREE -->
+
+        <div class="plan free">
+
+            <h3>
+                🆓 FREE
+            </h3>
+
+            <p>
+                Materials zinazopatikana
+                bure kwa wanafunzi.
+            </p>
+
+            <ul>
+
+                <li>
+                    📘 Free Notes
+                </li>
+
+                <li>
+                    📄 Free Past Papers
+                </li>
+
+                <li>
+                    🎓 Free Resources
+                </li>
+
+                <li>
+                    📱 Access kupitia simu
+                </li>
+
+            </ul>
+
+            <a
+                href="index.html"
+                class="plan-btn free-btn"
+            >
+
+                📚 Angalia Free Materials
+
+            </a>
+
+        </div>
+
+
+        <!-- PAID -->
+
+        <div class="plan paid">
+
+            <h3>
+                💰 PREMIUM
+            </h3>
+
+            <p>
+                Materials maalum ambazo
+                zinaweza kuhitaji malipo
+                kabla ya kufunguliwa.
+            </p>
+
+            <ul>
+
+                <li>
+                    ⭐ Premium Notes
+                </li>
+
+                <li>
+                    📚 Special Resources
+                </li>
+
+                <li>
+                    📄 Premium Past Papers
+                </li>
+
+                <li>
+                    🔐 Protected Materials
+                </li>
+
+            </ul>
+
+            <a
+                href="#payment"
+                class="plan-btn paid-btn"
+            >
+
+                💳 Jinsi ya Kulipia
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- PAYMENT -->
+
+<div
+    class="card payment"
+    id="payment"
+>
+
+    <h2>
+        💳 Mfumo wa Malipo
+    </h2>
+
+    <p>
+
+        MATITOHB HUB itakuwa na mfumo
+        wa kulipia Premium Materials
+        kupitia njia za malipo
+        zinazopatikana Tanzania.
+
+    </p>
+
+    <p>
+
+        Baada ya payment system
+        kuunganishwa, mtumiaji ataweza
+        kuchagua material, kuona bei,
+        kufanya malipo na kupata
+        access ya material aliyolipia.
+
+    </p>
+
+    <p>
+
+        🔐 Material ya Premium
+        haitafunguliwa mpaka payment
+        ithibitishwe.
+
+    </p>
+
+</div>
+
+
+<!-- WHATSAPP -->
+
+<div class="card whatsapp">
+
+    <h2>
+        💬 Unahitaji msaada?
+    </h2>
+
+    <p>
+        Wasiliana na MATITOHB HUB
+        kupitia WhatsApp.
+    </p>
+
+    <a
+        href="https://wa.me/255680159556"
+        target="_blank"
+        rel="noopener"
+    >
+
+        💬 WhatsApp +255 680 159 556
+
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p>
+
+        📚 <strong>
+        MATITOHB HUB
+        </strong>
+
+    </p>
+
+    <p>
+        Academic Materials Platform
+    </p>
+
+    <p>
+        © 2026 MATITOHB HUB.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+  </html> 
