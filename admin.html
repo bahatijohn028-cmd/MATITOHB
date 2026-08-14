@@ -177,14 +177,24 @@ textarea{
     resize:vertical;
 }
 
-/* ================= PRICE ================= */
+/* ================= FREE INFO ================= */
 
-.price-box{
-    display:none;
-}
+.free-info{
 
-.price-box.show{
-    display:flex;
+    background:#e7f8ef;
+
+    color:#087f5b;
+
+    padding:14px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
 }
 
 /* ================= UPLOAD ================= */
@@ -330,14 +340,6 @@ textarea{
 
 }
 
-.paid-badge{
-
-    background:#fff3cd;
-
-    color:#9a6700;
-
-}
-
 .category-badge{
 
     background:#eaf7f7;
@@ -370,6 +372,12 @@ textarea{
 
 }
 
+.view-btn:hover{
+
+    background:#088395;
+
+}
+
 .delete-btn{
 
     width:100%;
@@ -389,6 +397,12 @@ textarea{
     font-weight:bold;
 
     cursor:pointer;
+
+}
+
+.delete-btn:hover{
+
+    background:#c0392b;
 
 }
 
@@ -532,6 +546,17 @@ textarea{
     </h2>
 
 
+    <div class="free-info">
+
+        🆓 MATERIAL ZOTE NI BURE
+
+        <br>
+
+        Hakuna malipo yanayohitajika.
+
+    </div>
+
+
     <form id="uploadForm">
 
 
@@ -624,62 +649,6 @@ textarea{
                     </option>
 
                 </select>
-
-            </div>
-
-
-            <!-- TYPE -->
-
-            <div class="form-group">
-
-                <label for="type">
-
-                    Material Type
-
-                </label>
-
-                <select
-                    id="type"
-                    required
-                >
-
-                    <option value="FREE">
-
-                        🆓 FREE - Bure
-
-                    </option>
-
-                    <option value="PAID">
-
-                        💰 PAID - Inalipiwa
-
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- PRICE -->
-
-            <div
-                class="form-group price-box"
-                id="priceBox"
-            >
-
-                <label for="price">
-
-                    Bei (TZS)
-
-                </label>
-
-                <input
-                    type="number"
-                    id="price"
-                    min="0"
-                    step="100"
-                    placeholder="Mfano: 5000"
-                >
 
             </div>
 
@@ -856,21 +825,6 @@ document.getElementById(
     "userInfo"
 );
 
-const typeSelect =
-document.getElementById(
-    "type"
-);
-
-const priceBox =
-document.getElementById(
-    "priceBox"
-);
-
-const priceInput =
-document.getElementById(
-    "price"
-);
-
 
 /* =================================================
    SHOW USER
@@ -904,43 +858,6 @@ else{
         "👤 Admin";
 
 }
-
-
-/* =================================================
-   FREE / PAID
-================================================= */
-
-typeSelect.addEventListener(
-    "change",
-    function(){
-
-        if(this.value === "PAID"){
-
-            priceBox.classList.add(
-                "show"
-            );
-
-            priceInput.required =
-                true;
-
-        }
-
-        else{
-
-            priceBox.classList.remove(
-                "show"
-            );
-
-            priceInput.required =
-                false;
-
-            priceInput.value =
-                "0";
-
-        }
-
-    }
-);
 
 
 /* =================================================
@@ -1088,19 +1005,6 @@ async function loadMaterials(){
                     "Other";
 
 
-                const type =
-                    String(
-                        material.type ||
-                        "FREE"
-                    ).toUpperCase();
-
-
-                const price =
-                    Number(
-                        material.price || 0
-                    );
-
-
                 const description =
                     material.description ||
                     "Hakuna maelezo";
@@ -1109,39 +1013,6 @@ async function loadMaterials(){
                 const fileUrl =
                     material.file_url ||
                     "#";
-
-
-                let typeBadge = "";
-
-
-                if(type === "PAID"){
-
-                    typeBadge = `
-
-                        <span class="badge paid-badge">
-
-                            💰 PAID
-                            ${formatPrice(price)}
-
-                        </span>
-
-                    `;
-
-                }
-
-                else{
-
-                    typeBadge = `
-
-                        <span class="badge free-badge">
-
-                            🆓 FREE
-
-                        </span>
-
-                    `;
-
-                }
 
 
                 item.innerHTML = `
@@ -1163,6 +1034,7 @@ async function loadMaterials(){
                     <p>
 
                         🎓
+
                         <strong>
                             Course:
                         </strong>
@@ -1182,32 +1054,13 @@ async function loadMaterials(){
 
                         &nbsp;
 
-                        ${typeBadge}
+                        <span class="badge free-badge">
+
+                            🆓 FREE
+
+                        </span>
 
                     </p>
-
-
-                    ${
-                        type === "PAID"
-                        ?
-                        `
-
-                        <p>
-
-                            💵
-
-                            <strong>
-                                Bei:
-                            </strong>
-
-                            ${formatPrice(price)}
-
-                        </p>
-
-                        `
-                        :
-                        ""
-                    }
 
 
                     <p>
@@ -1219,6 +1072,7 @@ async function loadMaterials(){
 
                     ${
                         fileUrl !== "#"
+
                         ?
 
                         `
@@ -1325,12 +1179,6 @@ form.addEventListener(
             .value;
 
 
-        const type =
-            document
-            .getElementById("type")
-            .value;
-
-
         const description =
             document
             .getElementById("description")
@@ -1344,14 +1192,6 @@ form.addEventListener(
             .files[0];
 
 
-        let price =
-            Number(
-                document
-                .getElementById("price")
-                .value || 0
-            );
-
-
         /* VALIDATE FILE */
 
         if(!file){
@@ -1362,30 +1202,6 @@ form.addEventListener(
             );
 
             return;
-
-        }
-
-
-        /* VALIDATE PAID */
-
-        if(
-            type === "PAID" &&
-            price <= 0
-        ){
-
-            showMessage(
-                "❌ Weka bei ya material ya PAID.",
-                "error"
-            );
-
-            return;
-
-        }
-
-
-        if(type === "FREE"){
-
-            price = 0;
 
         }
 
@@ -1480,6 +1296,7 @@ form.addEventListener(
 
             /* =========================
                DATABASE INSERT
+               EVERYTHING IS FREE
             ========================= */
 
             const databaseResponse =
@@ -1521,13 +1338,13 @@ form.addEventListener(
                             category,
 
                         type:
-                            type,
+                            "FREE",
 
                         price:
-                            price,
+                            0,
 
                         is_paid:
-                            type === "PAID",
+                            false,
 
                         description:
                             description,
@@ -1593,16 +1410,7 @@ form.addEventListener(
 
             showMessage(
 
-                type === "PAID"
-
-                ?
-
-                "✅ Premium material imehifadhiwa. Bei: " +
-                formatPrice(price)
-
-                :
-
-                "✅ FREE material imehifadhiwa vizuri!",
+                "✅ Material imepakiwa vizuri na sasa ni FREE!",
 
                 "success"
 
@@ -1610,19 +1418,6 @@ form.addEventListener(
 
 
             form.reset();
-
-
-            priceBox.classList.remove(
-                "show"
-            );
-
-
-            priceInput.required =
-                false;
-
-
-            priceInput.value =
-                "0";
 
 
             await loadMaterials();
@@ -1827,32 +1622,6 @@ async function deleteMaterial(
 
 
 /* =================================================
-   FORMAT PRICE
-================================================= */
-
-function formatPrice(
-    value
-){
-
-    const number =
-        Number(value || 0);
-
-
-    if(number <= 0){
-
-        return "FREE";
-
-    }
-
-
-    return number.toLocaleString(
-        "en-US"
-    ) + " TZS";
-
-}
-
-
-/* =================================================
    LOGOUT
 ================================================= */
 
@@ -1930,4 +1699,4 @@ loadMaterials();
 
 </body>
 
-        </html> 
+    </html> 
