@@ -24,6 +24,8 @@ body{
     color:#172033;
 }
 
+/* ================= HEADER ================= */
+
 .header{
     background:linear-gradient(
         135deg,
@@ -32,7 +34,7 @@ body{
     );
 
     color:white;
-    padding:22px 6%;
+    padding:20px 6%;
 
     display:flex;
     justify-content:space-between;
@@ -42,7 +44,7 @@ body{
 }
 
 .logo{
-    font-size:22px;
+    font-size:23px;
     font-weight:bold;
 }
 
@@ -53,27 +55,29 @@ body{
 .header-buttons{
     display:flex;
     gap:10px;
-    align-items:center;
 }
 
 .home-btn,
 .logout-btn{
-    text-decoration:none;
-    color:white;
+    border:none;
     padding:10px 18px;
     border-radius:20px;
     font-weight:bold;
-    border:none;
+    text-decoration:none;
     cursor:pointer;
 }
 
 .home-btn{
     background:#35e0a1;
+    color:#071952;
 }
 
 .logout-btn{
     background:#e74c3c;
+    color:white;
 }
+
+/* ================= CONTAINER ================= */
 
 .container{
     width:92%;
@@ -81,13 +85,15 @@ body{
     margin:30px auto;
 }
 
+/* ================= CARD ================= */
+
 .card{
     background:white;
     padding:25px;
     border-radius:16px;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.08);
+    0 8px 25px rgba(0,0,0,.08);
 
     margin-bottom:25px;
 }
@@ -97,9 +103,29 @@ body{
     margin-bottom:20px;
 }
 
+/* ================= USER ================= */
+
+.user-info{
+    margin-bottom:20px;
+    padding:13px;
+
+    background:#eef7ff;
+
+    border-radius:8px;
+
+    color:#071952;
+
+    font-weight:bold;
+}
+
+/* ================= FORM ================= */
+
 .form-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(2,1fr);
+
     gap:18px;
 }
 
@@ -121,23 +147,29 @@ label{
 input,
 select,
 textarea{
+
     width:100%;
+
     padding:13px;
 
     border:1px solid #d5dce5;
+
     border-radius:8px;
 
     outline:none;
+
     font-size:15px;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
+
     border-color:#088395;
 
     box-shadow:
-        0 0 0 3px rgba(8,131,149,.1);
+    0 0 0 3px rgba(8,131,149,.10);
+
 }
 
 textarea{
@@ -145,25 +177,45 @@ textarea{
     resize:vertical;
 }
 
+/* ================= PRICE ================= */
+
+.price-box{
+    display:none;
+}
+
+.price-box.show{
+    display:flex;
+}
+
+/* ================= UPLOAD ================= */
+
 .upload-btn{
+
     width:100%;
+
     border:none;
+
     padding:15px;
+
     margin-top:20px;
 
     background:
-        linear-gradient(
-            135deg,
-            #071952,
-            #088395
-        );
+    linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
 
     color:white;
+
     border-radius:9px;
 
     font-size:16px;
+
     font-weight:bold;
+
     cursor:pointer;
+
 }
 
 .upload-btn:disabled{
@@ -171,13 +223,22 @@ textarea{
     cursor:not-allowed;
 }
 
+/* ================= MESSAGE ================= */
+
 .message{
+
     margin-top:18px;
-    padding:12px;
+
+    padding:13px;
+
     border-radius:8px;
+
     display:none;
+
     text-align:center;
+
     font-weight:bold;
+
 }
 
 .success{
@@ -190,18 +251,48 @@ textarea{
     color:#c0392b;
 }
 
+/* ================= MATERIAL LIST ================= */
+
 .material-list{
+
     display:grid;
+
     grid-template-columns:
-        repeat(auto-fit,minmax(270px,1fr));
+    repeat(
+        auto-fit,
+        minmax(270px,1fr)
+    );
+
     gap:20px;
+
 }
 
 .material{
+
     border:1px solid #e1e7ee;
+
     border-radius:13px;
+
     padding:20px;
-    background:#fff;
+
+    background:white;
+
+    transition:.2s;
+
+}
+
+.material:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.material-icon{
+    font-size:40px;
+    margin-bottom:10px;
 }
 
 .material h3{
@@ -215,96 +306,161 @@ textarea{
     line-height:1.5;
 }
 
+/* ================= BADGES ================= */
+
 .badge{
+
     display:inline-block;
-    background:#eaf7f7;
-    color:#087f8d;
-    padding:5px 9px;
+
+    padding:6px 10px;
+
     border-radius:15px;
+
     font-size:12px;
+
     font-weight:bold;
+
 }
 
+.free-badge{
+
+    background:#e7f8ef;
+
+    color:#087f5b;
+
+}
+
+.paid-badge{
+
+    background:#fff3cd;
+
+    color:#9a6700;
+
+}
+
+.category-badge{
+
+    background:#eaf7f7;
+
+    color:#087f8d;
+
+}
+
+/* ================= BUTTONS ================= */
+
 .view-btn{
+
     display:block;
+
     text-align:center;
+
     margin-top:15px;
+
     padding:10px;
 
     background:#071952;
+
     color:white;
 
     text-decoration:none;
+
     border-radius:7px;
+
     font-weight:bold;
+
 }
 
 .delete-btn{
+
     width:100%;
+
     margin-top:8px;
+
     padding:10px;
+
     border:none;
+
     border-radius:7px;
 
     background:#e74c3c;
+
     color:white;
 
     font-weight:bold;
+
     cursor:pointer;
+
 }
 
 .empty{
+
     text-align:center;
+
     padding:35px;
+
     color:#667085;
+
 }
 
+/* ================= WHATSAPP ================= */
+
 .whatsapp{
+
     display:block;
+
     text-align:center;
+
     text-decoration:none;
 
     background:#25D366;
+
     color:white;
 
     padding:14px;
+
     border-radius:30px;
 
     font-weight:bold;
+
     margin-top:20px;
+
 }
 
-.user-info{
-    margin-bottom:20px;
-    padding:12px;
-    background:#eef7ff;
-    border-radius:8px;
-    color:#071952;
-    font-weight:bold;
-}
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
     .header{
+
         flex-direction:column;
+
         gap:15px;
+
         text-align:center;
+
     }
 
     .header-buttons{
+
         flex-wrap:wrap;
+
         justify-content:center;
+
     }
 
     .form-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .form-group.full{
+
         grid-column:auto;
     }
 
     .container{
+
         width:94%;
     }
 
@@ -316,10 +472,15 @@ textarea{
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header class="header">
 
     <div class="logo">
+
         📚 MATITOHB <span>HUB</span>
+
     </div>
 
     <div class="header-buttons">
@@ -328,14 +489,18 @@ textarea{
             href="index.html"
             class="home-btn"
         >
+
             🏠 Homepage
+
         </a>
 
         <button
             class="logout-btn"
             onclick="logout()"
         >
+
             🚪 Logout
+
         </button>
 
     </div>
@@ -346,17 +511,24 @@ textarea{
 <div class="container">
 
 
+<!-- ================= UPLOAD CARD ================= -->
+
 <div class="card">
 
     <div
         id="userInfo"
         class="user-info"
     >
+
         ⏳ Inathibitisha Admin...
+
     </div>
 
+
     <h2>
+
         📤 Upload Academic Material
+
     </h2>
 
 
@@ -366,10 +538,14 @@ textarea{
         <div class="form-grid">
 
 
+            <!-- TITLE -->
+
             <div class="form-group">
 
                 <label for="title">
+
                     Material Title
+
                 </label>
 
                 <input
@@ -382,10 +558,14 @@ textarea{
             </div>
 
 
+            <!-- COURSE -->
+
             <div class="form-group">
 
                 <label for="course">
+
                     Course
+
                 </label>
 
                 <input
@@ -398,10 +578,14 @@ textarea{
             </div>
 
 
+            <!-- CATEGORY -->
+
             <div class="form-group">
 
                 <label for="category">
+
                     Category
+
                 </label>
 
                 <select
@@ -410,23 +594,33 @@ textarea{
                 >
 
                     <option value="">
+
                         Chagua Category
+
                     </option>
 
                     <option value="Notes">
+
                         Notes
+
                     </option>
 
                     <option value="Assignments">
+
                         Assignments
+
                     </option>
 
                     <option value="Past Papers">
+
                         Past Papers
+
                     </option>
 
                     <option value="Other">
+
                         Other
+
                     </option>
 
                 </select>
@@ -434,10 +628,70 @@ textarea{
             </div>
 
 
+            <!-- TYPE -->
+
+            <div class="form-group">
+
+                <label for="type">
+
+                    Material Type
+
+                </label>
+
+                <select
+                    id="type"
+                    required
+                >
+
+                    <option value="FREE">
+
+                        🆓 FREE - Bure
+
+                    </option>
+
+                    <option value="PAID">
+
+                        💰 PAID - Inalipiwa
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div
+                class="form-group price-box"
+                id="priceBox"
+            >
+
+                <label for="price">
+
+                    Bei (TZS)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="price"
+                    min="0"
+                    step="100"
+                    placeholder="Mfano: 5000"
+                >
+
+            </div>
+
+
+            <!-- FILE -->
+
             <div class="form-group">
 
                 <label for="file">
+
                     File
+
                 </label>
 
                 <input
@@ -450,10 +704,14 @@ textarea{
             </div>
 
 
+            <!-- DESCRIPTION -->
+
             <div class="form-group full">
 
                 <label for="description">
+
                     Description
+
                 </label>
 
                 <textarea
@@ -463,6 +721,7 @@ textarea{
 
             </div>
 
+
         </div>
 
 
@@ -471,8 +730,11 @@ textarea{
             class="upload-btn"
             id="uploadButton"
         >
+
             📤 Upload Material
+
         </button>
+
 
     </form>
 
@@ -486,19 +748,27 @@ textarea{
     <a
         href="https://wa.me/255680159556"
         target="_blank"
+        rel="noopener"
         class="whatsapp"
     >
+
         💬 WhatsApp +255 680 159 556
+
     </a>
 
 </div>
 
 
+<!-- ================= MATERIALS ================= -->
+
 <div class="card">
 
     <h2>
+
         📚 Uploaded Materials
+
     </h2>
+
 
     <div
         id="materialsList"
@@ -506,7 +776,9 @@ textarea{
     >
 
         <div class="empty">
+
             ⏳ Inapakia materials...
+
         </div>
 
     </div>
@@ -527,13 +799,8 @@ const SUPABASE_URL =
 "https://weinnjprzipdhjbygdmg.supabase.co";
 
 
-/*
-   PUBLISHABLE KEY
-   ILE ILIYOFANYA LOGIN IFANYE KAZI
-*/
-
 const SUPABASE_KEY =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s ";
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s";
 
 
 /* =================================================
@@ -556,29 +823,6 @@ if(!ACCESS_TOKEN){
 
     window.location.href =
         "login.html";
-
-}
-
-
-/* =================================================
-   HEADERS
-================================================= */
-
-function getHeaders(){
-
-    return {
-
-        "apikey":
-            SUPABASE_KEY,
-
-        "Authorization":
-            "Bearer " +
-            ACCESS_TOKEN,
-
-        "Content-Type":
-            "application/json"
-
-    };
 
 }
 
@@ -612,6 +856,21 @@ document.getElementById(
     "userInfo"
 );
 
+const typeSelect =
+document.getElementById(
+    "type"
+);
+
+const priceBox =
+document.getElementById(
+    "priceBox"
+);
+
+const priceInput =
+document.getElementById(
+    "price"
+);
+
 
 /* =================================================
    SHOW USER
@@ -629,6 +888,7 @@ if(USER_DATA){
             (user.email || "Admin");
 
     }
+
     catch(error){
 
         userInfo.textContent =
@@ -637,12 +897,50 @@ if(USER_DATA){
     }
 
 }
+
 else{
 
     userInfo.textContent =
         "👤 Admin";
 
 }
+
+
+/* =================================================
+   FREE / PAID
+================================================= */
+
+typeSelect.addEventListener(
+    "change",
+    function(){
+
+        if(this.value === "PAID"){
+
+            priceBox.classList.add(
+                "show"
+            );
+
+            priceInput.required =
+                true;
+
+        }
+
+        else{
+
+            priceBox.classList.remove(
+                "show"
+            );
+
+            priceInput.required =
+                false;
+
+            priceInput.value =
+                "0";
+
+        }
+
+    }
+);
 
 
 /* =================================================
@@ -667,15 +965,39 @@ function showMessage(
 
 
 /* =================================================
+   HEADERS
+================================================= */
+
+function getHeaders(){
+
+    return {
+
+        "apikey":
+            SUPABASE_KEY,
+
+        "Authorization":
+            "Bearer " +
+            ACCESS_TOKEN
+
+    };
+
+}
+
+
+/* =================================================
    LOAD MATERIALS
 ================================================= */
 
 async function loadMaterials(){
 
     materialsList.innerHTML = `
+
         <div class="empty">
+
             ⏳ Inapakia materials...
+
         </div>
+
     `;
 
 
@@ -688,6 +1010,7 @@ async function loadMaterials(){
             "/rest/v1/materials?select=*&order=id.desc",
 
             {
+
                 method:"GET",
 
                 headers:getHeaders()
@@ -703,7 +1026,8 @@ async function loadMaterials(){
                 await response.text();
 
             throw new Error(
-                "Database: " + error
+                "Database: " +
+                error
             );
 
         }
@@ -719,9 +1043,13 @@ async function loadMaterials(){
         ){
 
             materialsList.innerHTML = `
+
                 <div class="empty">
+
                     📭 Hakuna materials bado.
+
                 </div>
+
             `;
 
             return;
@@ -733,12 +1061,13 @@ async function loadMaterials(){
 
 
         materials.forEach(
-            material => {
+            function(material){
 
                 const item =
                     document.createElement(
                         "div"
                     );
+
 
                 item.className =
                     "material";
@@ -756,8 +1085,20 @@ async function loadMaterials(){
 
                 const category =
                     material.category ||
-                    material.type ||
                     "Other";
+
+
+                const type =
+                    String(
+                        material.type ||
+                        "FREE"
+                    ).toUpperCase();
+
+
+                const price =
+                    Number(
+                        material.price || 0
+                    );
 
 
                 const description =
@@ -770,58 +1111,148 @@ async function loadMaterials(){
                     "#";
 
 
+                let typeBadge = "";
+
+
+                if(type === "PAID"){
+
+                    typeBadge = `
+
+                        <span class="badge paid-badge">
+
+                            💰 PAID
+                            ${formatPrice(price)}
+
+                        </span>
+
+                    `;
+
+                }
+
+                else{
+
+                    typeBadge = `
+
+                        <span class="badge free-badge">
+
+                            🆓 FREE
+
+                        </span>
+
+                    `;
+
+                }
+
+
                 item.innerHTML = `
 
+                    <div class="material-icon">
+
+                        📚
+
+                    </div>
+
+
                     <h3>
-                        📚 ${escapeHTML(title)}
+
+                        ${escapeHTML(title)}
+
                     </h3>
 
+
                     <p>
+
                         🎓
                         <strong>
                             Course:
                         </strong>
+
                         ${escapeHTML(course)}
+
                     </p>
 
+
                     <p>
-                        <span class="badge">
+
+                        <span class="badge category-badge">
+
                             ${escapeHTML(category)}
+
                         </span>
+
+                        &nbsp;
+
+                        ${typeBadge}
+
                     </p>
 
-                    <p>
-                        ${escapeHTML(description)}
-                    </p>
 
                     ${
-                        fileUrl !== "#"
+                        type === "PAID"
                         ?
                         `
-                        <a
-                            href="${escapeAttribute(fileUrl)}"
-                            target="_blank"
-                            class="view-btn"
-                        >
-                            👁️ Fungua Material
-                        </a>
+
+                        <p>
+
+                            💵
+
+                            <strong>
+                                Bei:
+                            </strong>
+
+                            ${formatPrice(price)}
+
+                        </p>
+
                         `
                         :
                         ""
                     }
 
+
+                    <p>
+
+                        ${escapeHTML(description)}
+
+                    </p>
+
+
+                    ${
+                        fileUrl !== "#"
+                        ?
+
+                        `
+
+                        <a
+                            href="${escapeAttribute(fileUrl)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="view-btn"
+                        >
+
+                            👁️ Fungua Material
+
+                        </a>
+
+                        `
+
+                        :
+
+                        ""
+
+                    }
+
+
                     <button
                         class="delete-btn"
                         onclick="deleteMaterial(
-                            '${escapeAttribute(
-                                String(material.id)
-                            )}',
-                            '${escapeAttribute(
-                                material.file_url || ""
-                            )}'
+                            '${escapeJS(String(material.id))}',
+                            '${escapeJS(material.file_url || "")}'
                         )"
                     >
+
                         🗑️ Delete
+
                     </button>
 
                 `;
@@ -839,16 +1270,23 @@ async function loadMaterials(){
     catch(error){
 
         console.error(
-            "LOAD MATERIALS ERROR:",
+            "LOAD ERROR:",
             error
         );
 
+
         materialsList.innerHTML = `
+
             <div class="empty">
+
                 ❌ Imeshindwa kupata materials.
+
                 <br><br>
+
                 ${escapeHTML(error.message)}
+
             </div>
+
         `;
 
     }
@@ -887,6 +1325,12 @@ form.addEventListener(
             .value;
 
 
+        const type =
+            document
+            .getElementById("type")
+            .value;
+
+
         const description =
             document
             .getElementById("description")
@@ -900,6 +1344,16 @@ form.addEventListener(
             .files[0];
 
 
+        let price =
+            Number(
+                document
+                .getElementById("price")
+                .value || 0
+            );
+
+
+        /* VALIDATE FILE */
+
         if(!file){
 
             showMessage(
@@ -908,6 +1362,30 @@ form.addEventListener(
             );
 
             return;
+
+        }
+
+
+        /* VALIDATE PAID */
+
+        if(
+            type === "PAID" &&
+            price <= 0
+        ){
+
+            showMessage(
+                "❌ Weka bei ya material ya PAID.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(type === "FREE"){
+
+            price = 0;
 
         }
 
@@ -921,8 +1399,9 @@ form.addEventListener(
 
         try{
 
-
-            /* FILE NAME */
+            /* =========================
+               FILE NAME
+            ========================= */
 
             const safeName =
                 file.name
@@ -939,9 +1418,9 @@ form.addEventListener(
                 safeName;
 
 
-            /* =================================================
+            /* =========================
                STORAGE UPLOAD
-            ================================================= */
+            ========================= */
 
             const uploadResponse =
             await fetch(
@@ -989,7 +1468,9 @@ form.addEventListener(
             }
 
 
-            /* PUBLIC FILE URL */
+            /* =========================
+               PUBLIC URL
+            ========================= */
 
             const fileUrl =
                 SUPABASE_URL +
@@ -997,9 +1478,9 @@ form.addEventListener(
                 filePath;
 
 
-            /* =================================================
+            /* =========================
                DATABASE INSERT
-            ================================================= */
+            ========================= */
 
             const databaseResponse =
             await fetch(
@@ -1030,17 +1511,23 @@ form.addEventListener(
 
                     body:JSON.stringify({
 
-                        title:title,
+                        title:
+                            title,
 
-                        course:course,
+                        course:
+                            course,
 
-                        category:category,
+                        category:
+                            category,
 
-                        /* MUHIMU:
-                           DATABASE YAKO INATAKA TYPE
-                        */
+                        type:
+                            type,
 
-                        type:category,
+                        price:
+                            price,
+
+                        is_paid:
+                            type === "PAID",
 
                         description:
                             description,
@@ -1057,6 +1544,8 @@ form.addEventListener(
 
             );
 
+
+            /* DATABASE ERROR */
 
             if(!databaseResponse.ok){
 
@@ -1103,12 +1592,37 @@ form.addEventListener(
             /* SUCCESS */
 
             showMessage(
-                "✅ Material imehifadhiwa vizuri!",
+
+                type === "PAID"
+
+                ?
+
+                "✅ Premium material imehifadhiwa. Bei: " +
+                formatPrice(price)
+
+                :
+
+                "✅ FREE material imehifadhiwa vizuri!",
+
                 "success"
+
             );
 
 
             form.reset();
+
+
+            priceBox.classList.remove(
+                "show"
+            );
+
+
+            priceInput.required =
+                false;
+
+
+            priceInput.value =
+                "0";
 
 
             await loadMaterials();
@@ -1125,9 +1639,12 @@ form.addEventListener(
 
 
             showMessage(
+
                 "❌ " +
                 error.message,
+
                 "error"
+
             );
 
         }
@@ -1156,13 +1673,13 @@ async function deleteMaterial(
     fileUrl
 ){
 
-    const confirmDelete =
+    const confirmed =
         confirm(
             "Una uhakika unataka kufuta material hii?"
         );
 
 
-    if(!confirmDelete){
+    if(!confirmed){
 
         return;
 
@@ -1170,6 +1687,10 @@ async function deleteMaterial(
 
 
     try{
+
+        /* =========================
+           DELETE DATABASE
+        ========================= */
 
         const response =
         await fetch(
@@ -1207,21 +1728,27 @@ async function deleteMaterial(
                 await response.text();
 
             throw new Error(
-                "Database: " + error
+                "Database: " +
+                error
             );
 
         }
 
 
-        /* DELETE STORAGE FILE */
+        /* =========================
+           DELETE STORAGE
+        ========================= */
 
         if(fileUrl){
 
             const marker =
                 "/object/public/matitohb/";
 
+
             const position =
-                fileUrl.indexOf(marker);
+                fileUrl.indexOf(
+                    marker
+                );
 
 
             if(position !== -1){
@@ -1264,8 +1791,11 @@ async function deleteMaterial(
 
 
         showMessage(
+
             "✅ Material imefutwa.",
+
             "success"
+
         );
 
 
@@ -1283,12 +1813,41 @@ async function deleteMaterial(
 
 
         showMessage(
+
             "❌ Imeshindwa kufuta: " +
             error.message,
+
             "error"
+
         );
 
     }
+
+}
+
+
+/* =================================================
+   FORMAT PRICE
+================================================= */
+
+function formatPrice(
+    value
+){
+
+    const number =
+        Number(value || 0);
+
+
+    if(number <= 0){
+
+        return "FREE";
+
+    }
+
+
+    return number.toLocaleString(
+        "en-US"
+    ) + " TZS";
 
 }
 
@@ -1311,6 +1870,7 @@ function logout(){
         "matitohb_user"
     );
 
+
     window.location.href =
         "login.html";
 
@@ -1329,7 +1889,7 @@ function escapeHTML(text){
         );
 
     div.textContent =
-        text;
+        String(text || "");
 
     return div.innerHTML;
 
@@ -1338,10 +1898,24 @@ function escapeHTML(text){
 
 function escapeAttribute(text){
 
-    return String(text)
+    return String(text || "")
+        .replace(/&/g,"&amp;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#39;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;");
+
+}
+
+
+function escapeJS(text){
+
+    return String(text || "")
         .replace(/\\/g,"\\\\")
         .replace(/'/g,"\\'")
-        .replace(/"/g,"&quot;");
+        .replace(/"/g,"&quot;")
+        .replace(/\n/g,"\\n")
+        .replace(/\r/g,"\\r");
 
 }
 
@@ -1355,4 +1929,5 @@ loadMaterials();
 </script>
 
 </body>
-</html>  
+
+        </html> 
