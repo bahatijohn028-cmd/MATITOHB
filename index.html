@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MATITOHB HUB</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f7fb;
+    color:#172033;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    background:
+    linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
+
+    color:white;
+
+    padding:18px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    font-size:23px;
+
+    font-weight:bold;
+
+}
+
+.logo span{
+
+    color:#35e0a1;
+
+}
+
+.admin-btn{
+
+    background:#35e0a1;
+
+    color:#071952;
+
+    padding:10px 18px;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    background:
+    linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
+
+    color:white;
+
+    padding:65px 20px;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.hero h1 span{
+
+    color:#35e0a1;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.6;
+
+}
+
+.hero-buttons{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-btn{
+
+    display:inline-block;
+
+    padding:13px 22px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.hero-btn.primary{
+
+    background:#35e0a1;
+
+    color:#071952;
+
+}
+
+.hero-btn.secondary{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+/* ================= SEARCH ================= */
+
+.search-section{
+
+    width:92%;
+
+    max-width:1100px;
+
+    margin:-25px auto 30px;
+
+    position:relative;
+
+}
+
+.search-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.10);
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #d5dce5;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+.search-box input:focus{
+
+    border-color:#088395;
+
+    box-shadow:
+    0 0 0 3px rgba(8,131,149,.10);
+
+}
+
+/* ================= FILTER ================= */
+
+.filters{
+
+    width:92%;
+
+    max-width:1100px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.filter-btn{
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:20px;
+
+    background:white;
+
+    color:#071952;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.07);
+
+    transition:.2s;
+
+}
+
+.filter-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.filter-btn.active{
+
+    background:#071952;
+
+    color:white;
+
+}
+
+/* ================= RESULTS INFO ================= */
+
+.results-info{
+
+    width:92%;
+
+    max-width:1100px;
+
+    margin:0 auto 20px;
+
+    text-align:center;
+
+    color:#667085;
+
+    font-weight:bold;
+
+}
+
+/* ================= MATERIALS ================= */
+
+.section{
+
+    width:92%;
+
+    max-width:1100px;
+
+    margin:30px auto;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.section-title h2{
+
+    color:#071952;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.section-title p{
+
+    color:#667085;
+
+}
+
+/* ================= MATERIAL LIST ================= */
+
+.material-list{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(270px,1fr)
+    );
+
+    gap:20px;
+
+}
+
+.material{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    box-shadow:
+    0 7px 20px rgba(0,0,0,.07);
+
+    border:1px solid #e5e9ef;
+
+    transition:.25s;
+
+}
+
+.material:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 28px rgba(0,0,0,.12);
+
+}
+
+.material-icon{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.material h3{
+
+    color:#071952;
+
+    margin-bottom:10px;
+
+    line-height:1.4;
+
+}
+
+.material p{
+
+    color:#667085;
+
+    margin:8px 0;
+
+    line-height:1.5;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:#eaf7f7;
+
+    color:#087f8d;
+
+    padding:6px 10px;
+
+    border-radius:15px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+.open-btn{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:16px;
+
+    padding:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+}
+
+.empty{
+
+    background:white;
+
+    padding:40px 20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    color:#667085;
+
+    box-shadow:
+    0 7px 20px rgba(0,0,0,.06);
+
+}
+
+/* ================= STATS ================= */
+
+.stats{
+
+    width:92%;
+
+    max-width:1100px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        3,
+        1fr
+    );
+
+    gap:15px;
+
+}
+
+.stat{
+
+    background:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 7px 20px rgba(0,0,0,.06);
+
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:30px;
+
+    color:#071952;
+
+    margin-bottom:7px;
+
+}
+
+.stat span{
+
+    color:#667085;
+
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-section{
+
+    width:92%;
+
+    max-width:800px;
+
+    margin:45px auto;
+
+    text-align:center;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.whatsapp-section h2{
+
+    color:#071952;
+
+    margin-bottom:10px;
+
+}
+
+.whatsapp-section p{
+
+    color:#667085;
+
+    margin-bottom:20px;
+
+}
+
+.whatsapp{
+
+    display:inline-block;
+
+    background:#25D366;
+
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    background:#071952;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    margin-top:50px;
+
+}
+
+.footer p{
+
+    margin:7px 0;
+
+}
+
+.footer a{
+
+    color:#35e0a1;
+
+    text-decoration:none;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero{
+
+        padding:50px 18px;
+
+    }
+
+    .hero h1{
+
+        font-size:31px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .filter-btn{
+
+        padding:9px 14px;
+
+        font-size:13px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        📚 MATITOHB <span>HUB</span>
+
+    </div>
+
+
+    <a
+        href="login.html"
+        class="admin-btn"
+    >
+
+        🔐 Admin
+
+    </a>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>
+
+        Karibu <span>MATITOHB HUB</span>
+
+    </h1>
+
+
+    <p>
+
+        Sehemu rahisi ya kupata Notes,
+        Assignments, Past Papers na
+        materials mbalimbali za masomo.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a
+            href="#materials"
+            class="hero-btn primary"
+        >
+
+            📚 Angalia Materials
+
+        </a>
+
+
+        <a
+            href="https://wa.me/255680159556"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn secondary"
+        >
+
+            💬 WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="🔎 Tafuta material, course, category au description..."
+            autocomplete="off"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FILTER ================= -->
+
+<div class="filters">
+
+    <button
+        type="button"
+        class="filter-btn active"
+        data-category="All"
+    >
+
+        📚 Zote
+
+    </button>
+
+
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Notes"
+    >
+
+        📘 Notes
+
+    </button>
+
+
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Assignments"
+    >
+
+        📝 Assignments
+
+    </button>
+
+
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Past Papers"
+    >
+
+        📄 Past Papers
+
+    </button>
+
+
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Other"
+    >
+
+        📚 Other
+
+    </button>
+
+</div>
+
+
+
+<!-- ================= RESULTS INFO ================= -->
+
+<div
+    id="resultsInfo"
+    class="results-info"
+>
+
+    ⏳ Inapakia...
+
+</div>
+
+
+
+<!-- ================= MATERIALS ================= -->
+
+<section
+    class="section"
+    id="materials"
+>
+
+    <div class="section-title">
+
+        <h2>
+            📚 Academic Materials
+        </h2>
+
+        <p>
+            Chagua material unayotaka kusoma.
+        </p>
+
+    </div>
+
+
+    <div
+        id="materialsList"
+        class="material-list"
+    >
+
+        <div class="empty">
+
+            ⏳ Inapakia materials...
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <strong id="materialCount">
+            0
+        </strong>
+
+        <span>
+            Materials
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            📚
+        </strong>
+
+        <span>
+            Academic Resources
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            💬
+        </strong>
+
+        <span>
+            WhatsApp Support
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<section class="whatsapp-section">
+
+    <h2>
+        💬 Unahitaji msaada?
+    </h2>
+
+    <p>
+        Wasiliana nasi kupitia WhatsApp
+        kwa maswali au materials.
+    </p>
+
+
+    <a
+        href="https://wa.me/255680159556"
+        target="_blank"
+        rel="noopener"
+        class="whatsapp"
+    >
+
+        💬 WhatsApp +255 680 159 556
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <p>
+
+        📚 <strong>
+        MATITOHB HUB
+        </strong>
+
+    </p>
+
+
+    <p>
+        Academic Materials Platform
+    </p>
+
+
+    <p>
+
+        © 2026 MATITOHB HUB.
+        All Rights Reserved.
+
+    </p>
+
+
+    <p>
+
+        WhatsApp:
+
+        <a
+            href="https://wa.me/255680159556"
+            target="_blank"
+            rel="noopener"
+        >
+
+            +255 680 159 556
+
+        </a>
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =================================================
+   SUPABASE CONNECTION
+================================================= */
+
+const SUPABASE_URL =
+"https://weinnjprzipdhjbygdmg.supabase.co";
+
+
+const SUPABASE_KEY =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s";
+
+
+/* =================================================
+   ELEMENTS
+================================================= */
+
+const materialsList =
+document.getElementById(
+    "materialsList"
+);
+
+
+const searchInput =
+document.getElementById(
+    "searchInput"
+);
+
+
+const materialCount =
+document.getElementById(
+    "materialCount"
+);
+
+
+const resultsInfo =
+document.getElementById(
+    "resultsInfo"
+);
+
+
+const filterButtons =
+document.querySelectorAll(
+    ".filter-btn"
+);
+
+
+/* =================================================
+   DATA
+================================================= */
+
+let allMaterials = [];
+
+
+let selectedCategory =
+    "All";
+
+
+/* =================================================
+   NORMALIZE TEXT
+================================================= */
+
+function normalizeText(value){
+
+    return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g," ");
+
+}
+
+
+/* =================================================
+   LOAD MATERIALS
+================================================= */
+
+async function loadMaterials(){
+
+    materialsList.innerHTML = `
+
+        <div class="empty">
+
+            ⏳ Inapakia materials...
+
+        </div>
+
+    `;
+
+
+    resultsInfo.textContent =
+        "⏳ Inapakia materials...";
+
+
+    try{
+
+        const response =
+        await fetch(
+
+            SUPABASE_URL +
+            "/rest/v1/materials?select=*&order=id.desc",
+
+            {
+
+                method:"GET",
+
+                headers:{
+
+                    "apikey":
+                        SUPABASE_KEY,
+
+                    "Authorization":
+                        "Bearer " +
+                        SUPABASE_KEY,
+
+                    "Content-Type":
+                        "application/json"
+
+                }
+
+            }
+
+        );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(error);
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if(!Array.isArray(data)){
+
+            throw new Error(
+                "Database haikurudisha list ya materials."
+            );
+
+        }
+
+
+        allMaterials = data;
+
+
+        materialCount.textContent =
+            allMaterials.length;
+
+
+        displayMaterials();
+
+    }
+
+
+    catch(error){
+
+        console.error(
+            "MATERIAL ERROR:",
+            error
+        );
+
+
+        resultsInfo.textContent =
+            "❌ Imeshindwa kupakia materials.";
+
+
+        materialsList.innerHTML = `
+
+            <div class="empty">
+
+                ❌ Imeshindwa kupakia materials.
+
+                <br><br>
+
+                Tafadhali refresh ukurasa.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =================================================
+   GET MATERIAL CATEGORY
+================================================= */
+
+function getMaterialCategory(material){
+
+    return normalizeText(
+
+        material.category ||
+        material.type ||
+        "Other"
+
+    );
+
+}
+
+
+/* =================================================
+   DISPLAY MATERIALS
+================================================= */
+
+function displayMaterials(){
+
+    const searchText =
+        normalizeText(
+            searchInput.value
+        );
+
+
+    const selected =
+        normalizeText(
+            selectedCategory
+        );
+
+
+    /*
+       FILTER MATERIALS
+    */
+
+    const filtered =
+        allMaterials.filter(
+            function(material){
+
+                const title =
+                    normalizeText(
+                        material.title
+                    );
+
+
+                const course =
+                    normalizeText(
+                        material.course
+                    );
+
+
+                const category =
+                    getMaterialCategory(
+                        material
+                    );
+
+
+                const description =
+                    normalizeText(
+                        material.description
+                    );
+
+
+                /*
+                   SEARCH INAANGALIA:
+                   TITLE
+                   COURSE
+                   CATEGORY
+                   DESCRIPTION
+                */
+
+                const matchesSearch =
+
+                    searchText === "" ||
+
+                    title.includes(
+                        searchText
+                    ) ||
+
+                    course.includes(
+                        searchText
+                    ) ||
+
+                    category.includes(
+                        searchText
+                    ) ||
+
+                    description.includes(
+                        searchText
+                    );
+
+
+                /*
+                   CATEGORY FILTER
+                */
+
+                const matchesCategory =
+
+                    selected === "all" ||
+
+                    category === selected;
+
+
+                return (
+                    matchesSearch &&
+                    matchesCategory
+                );
+
+            }
+        );
+
+
+    /*
+       RESULTS INFO
+    */
+
+    if(
+        searchText !== "" ||
+        selected !== "all"
+    ){
+
+        resultsInfo.textContent =
+
+            "🔎 Matokeo: " +
+            filtered.length +
+            " kati ya " +
+            allMaterials.length +
+            " materials";
+
+    }
+
+    else{
+
+        resultsInfo.textContent =
+
+            "📚 Materials zote: " +
+            allMaterials.length;
+
+    }
+
+
+    /*
+       NO RESULTS
+    */
+
+    if(
+        filtered.length === 0
+    ){
+
+        materialsList.innerHTML = `
+
+            <div class="empty">
+
+                🔎 Hakuna material iliyopatikana.
+
+                <br><br>
+
+                Jaribu jina la material,
+                course au category nyingine.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /*
+       CLEAR LIST
+    */
+
+    materialsList.innerHTML = "";
+
+
+    /*
+       CREATE MATERIAL CARDS
+    */
+
+    filtered.forEach(
+        function(material){
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "material";
+
+
+            const title =
+                material.title ||
+                "Material";
+
+
+            const course =
+                material.course ||
+                "General";
+
+
+            const category =
+                material.category ||
+                material.type ||
+                "Other";
+
+
+            const description =
+                material.description ||
+                "Hakuna maelezo";
+
+
+            const fileUrl =
+                material.file_url ||
+                "#";
+
+
+            /*
+               CARD HTML
+            */
+
+            item.innerHTML = `
+
+                <div class="material-icon">
+
+                    📚
+
+                </div>
+
+
+                <h3>
+
+                    ${escapeHTML(title)}
+
+                </h3>
+
+
+                <p>
+
+                    🎓
+
+                    <strong>
+                        Course:
+                    </strong>
+
+                    ${escapeHTML(course)}
+
+                </p>
+
+
+                <p>
+
+                    <span class="badge">
+
+                        ${escapeHTML(category)}
+
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    ${escapeHTML(description)}
+
+                </p>
+
+
+                ${
+                    fileUrl !== "#"
+
+                    ?
+
+                    `
+
+                    <a
+                        href="${escapeAttribute(fileUrl)}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="open-btn"
+                    >
+
+                        📖 Fungua Material
+
+                    </a>
+
+                    `
+
+                    :
+
+                    `
+
+                    <div class="empty">
+
+                        📭 File haipatikani.
+
+                    </div>
+
+                    `
+                }
+
+            `;
+
+
+            materialsList.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =================================================
+   SEARCH
+================================================= */
+
+searchInput.addEventListener(
+    "input",
+    function(){
+
+        displayMaterials();
+
+    }
+);
+
+
+/* =================================================
+   FILTER BUTTONS
+================================================= */
+
+filterButtons.forEach(
+    function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                /*
+                   Ondoa active
+                   kwa buttons zote
+                */
+
+                filterButtons.forEach(
+                    function(btn){
+
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                /*
+                   Weka active
+                   kwenye button hii
+                */
+
+                this.classList.add(
+                    "active"
+                );
+
+
+                /*
+                   Chukua category
+                */
+
+                selectedCategory =
+                    this.getAttribute(
+                        "data-category"
+                    ) || "All";
+
+
+                /*
+                   Onyesha results
+                */
+
+                displayMaterials();
+
+            }
+        );
+
+    }
+);
+
+
+/* =================================================
+   ESCAPE HTML
+================================================= */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        String(text || "");
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =================================================
+   ESCAPE URL ATTRIBUTE
+================================================= */
+
+function escapeAttribute(text){
+
+    return String(text || "")
+        .replace(/&/g,"&amp;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#39;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;");
+
+}
+
+
+/* =================================================
+   START WEBSITE
+================================================= */
+
+loadMaterials();
+
+</script>
+
+
+</body>
+
+</html>  
