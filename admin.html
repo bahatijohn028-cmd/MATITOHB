@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MATITOHB HUB - Admin</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f7fb;
+    color:#172033;
+}
+
+.header{
+    background:linear-gradient(
+        135deg,
+        #071952,
+        #088395
+    );
+
+    color:white;
+    padding:22px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#35e0a1;
+}
+
+.header-buttons{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.home-btn,
+.logout-btn{
+    text-decoration:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.home-btn{
+    background:#35e0a1;
+}
+
+.logout-btn{
+    background:#e74c3c;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#071952;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+label{
+    font-weight:bold;
+    margin-bottom:7px;
+    color:#26364d;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+
+    border:1px solid #d5dce5;
+    border-radius:8px;
+
+    outline:none;
+    font-size:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#088395;
+
+    box-shadow:
+        0 0 0 3px rgba(8,131,149,.1);
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.upload-btn{
+    width:100%;
+    border:none;
+    padding:15px;
+    margin-top:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071952,
+            #088395
+        );
+
+    color:white;
+    border-radius:9px;
+
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.upload-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+.message{
+    margin-top:18px;
+    padding:12px;
+    border-radius:8px;
+    display:none;
+    text-align:center;
+    font-weight:bold;
+}
+
+.success{
+    background:#e7f8ef;
+    color:#087f5b;
+}
+
+.error{
+    background:#ffecec;
+    color:#c0392b;
+}
+
+.material-list{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(270px,1fr));
+    gap:20px;
+}
+
+.material{
+    border:1px solid #e1e7ee;
+    border-radius:13px;
+    padding:20px;
+    background:#fff;
+}
+
+.material h3{
+    color:#071952;
+    margin-bottom:10px;
+}
+
+.material p{
+    color:#667085;
+    margin:7px 0;
+    line-height:1.5;
+}
+
+.badge{
+    display:inline-block;
+    background:#eaf7f7;
+    color:#087f8d;
+    padding:5px 9px;
+    border-radius:15px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.view-btn{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    padding:10px;
+
+    background:#071952;
+    color:white;
+
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.delete-btn{
+    width:100%;
+    margin-top:8px;
+    padding:10px;
+    border:none;
+    border-radius:7px;
+
+    background:#e74c3c;
+    color:white;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.empty{
+    text-align:center;
+    padding:35px;
+    color:#667085;
+}
+
+.whatsapp{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+
+    background:#25D366;
+    color:white;
+
+    padding:14px;
+    border-radius:30px;
+
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.user-info{
+    margin-bottom:20px;
+    padding:12px;
+    background:#eef7ff;
+    border-radius:8px;
+    color:#071952;
+    font-weight:bold;
+}
+
+@media(max-width:700px){
+
+    .header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .header-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .container{
+        width:94%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        📚 MATITOHB <span>HUB</span>
+    </div>
+
+    <div class="header-buttons">
+
+        <a
+            href="index.html"
+            class="home-btn"
+        >
+            🏠 Homepage
+        </a>
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            🚪 Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+
+    <div
+        id="userInfo"
+        class="user-info"
+    >
+        ⏳ Inathibitisha Admin...
+    </div>
+
+    <h2>
+        📤 Upload Academic Material
+    </h2>
+
+
+    <form id="uploadForm">
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="title">
+                    Material Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Mfano: Introduction to Procurement"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="course">
+                    Course
+                </label>
+
+                <input
+                    type="text"
+                    id="course"
+                    placeholder="Mfano: Procurement"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select
+                    id="category"
+                    required
+                >
+
+                    <option value="">
+                        Chagua Category
+                    </option>
+
+                    <option value="Notes">
+                        Notes
+                    </option>
+
+                    <option value="Assignments">
+                        Assignments
+                    </option>
+
+                    <option value="Past Papers">
+                        Past Papers
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="file">
+                    File
+                </label>
+
+                <input
+                    type="file"
+                    id="file"
+                    accept=".pdf,.doc,.docx"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Andika maelezo ya material..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="upload-btn"
+            id="uploadButton"
+        >
+            📤 Upload Material
+        </button>
+
+    </form>
+
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+
+    <a
+        href="https://wa.me/255680159556"
+        target="_blank"
+        class="whatsapp"
+    >
+        💬 WhatsApp +255 680 159 556
+    </a>
+
+</div>
+
+
+<div class="card">
+
+    <h2>
+        📚 Uploaded Materials
+    </h2>
+
+    <div
+        id="materialsList"
+        class="material-list"
+    >
+
+        <div class="empty">
+            ⏳ Inapakia materials...
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =================================================
+   SUPABASE CONNECTION
+================================================= */
+
+const SUPABASE_URL =
+"https://weinnjprzipdhjbygdmg.supabase.co";
+
+
+/*
+   PUBLISHABLE KEY
+   ILE ILIYOFANYA LOGIN IFANYE KAZI
+*/
+
+const SUPABASE_KEY =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s ";
+
+
+/* =================================================
+   LOGIN SESSION
+================================================= */
+
+const ACCESS_TOKEN =
+localStorage.getItem(
+    "matitohb_access_token"
+);
+
+
+const USER_DATA =
+localStorage.getItem(
+    "matitohb_user"
+);
+
+
+if(!ACCESS_TOKEN){
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* =================================================
+   HEADERS
+================================================= */
+
+function getHeaders(){
+
+    return {
+
+        "apikey":
+            SUPABASE_KEY,
+
+        "Authorization":
+            "Bearer " +
+            ACCESS_TOKEN,
+
+        "Content-Type":
+            "application/json"
+
+    };
+
+}
+
+
+/* =================================================
+   ELEMENTS
+================================================= */
+
+const form =
+document.getElementById(
+    "uploadForm"
+);
+
+const message =
+document.getElementById(
+    "message"
+);
+
+const button =
+document.getElementById(
+    "uploadButton"
+);
+
+const materialsList =
+document.getElementById(
+    "materialsList"
+);
+
+const userInfo =
+document.getElementById(
+    "userInfo"
+);
+
+
+/* =================================================
+   SHOW USER
+================================================= */
+
+if(USER_DATA){
+
+    try{
+
+        const user =
+            JSON.parse(USER_DATA);
+
+        userInfo.textContent =
+            "👤 Admin: " +
+            (user.email || "Admin");
+
+    }
+    catch(error){
+
+        userInfo.textContent =
+            "👤 Admin";
+
+    }
+
+}
+else{
+
+    userInfo.textContent =
+        "👤 Admin";
+
+}
+
+
+/* =================================================
+   MESSAGE
+================================================= */
+
+function showMessage(
+    text,
+    type
+){
+
+    message.textContent =
+        text;
+
+    message.className =
+        "message " + type;
+
+    message.style.display =
+        "block";
+
+}
+
+
+/* =================================================
+   LOAD MATERIALS
+================================================= */
+
+async function loadMaterials(){
+
+    materialsList.innerHTML = `
+        <div class="empty">
+            ⏳ Inapakia materials...
+        </div>
+    `;
+
+
+    try{
+
+        const response =
+        await fetch(
+
+            SUPABASE_URL +
+            "/rest/v1/materials?select=*&order=id.desc",
+
+            {
+                method:"GET",
+
+                headers:getHeaders()
+
+            }
+
+        );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(
+                "Database: " + error
+            );
+
+        }
+
+
+        const materials =
+            await response.json();
+
+
+        if(
+            !materials ||
+            materials.length === 0
+        ){
+
+            materialsList.innerHTML = `
+                <div class="empty">
+                    📭 Hakuna materials bado.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        materialsList.innerHTML = "";
+
+
+        materials.forEach(
+            material => {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "material";
+
+
+                const title =
+                    material.title ||
+                    "Material";
+
+
+                const course =
+                    material.course ||
+                    "General";
+
+
+                const category =
+                    material.category ||
+                    material.type ||
+                    "Other";
+
+
+                const description =
+                    material.description ||
+                    "Hakuna maelezo";
+
+
+                const fileUrl =
+                    material.file_url ||
+                    "#";
+
+
+                item.innerHTML = `
+
+                    <h3>
+                        📚 ${escapeHTML(title)}
+                    </h3>
+
+                    <p>
+                        🎓
+                        <strong>
+                            Course:
+                        </strong>
+                        ${escapeHTML(course)}
+                    </p>
+
+                    <p>
+                        <span class="badge">
+                            ${escapeHTML(category)}
+                        </span>
+                    </p>
+
+                    <p>
+                        ${escapeHTML(description)}
+                    </p>
+
+                    ${
+                        fileUrl !== "#"
+                        ?
+                        `
+                        <a
+                            href="${escapeAttribute(fileUrl)}"
+                            target="_blank"
+                            class="view-btn"
+                        >
+                            👁️ Fungua Material
+                        </a>
+                        `
+                        :
+                        ""
+                    }
+
+                    <button
+                        class="delete-btn"
+                        onclick="deleteMaterial(
+                            '${escapeAttribute(
+                                String(material.id)
+                            )}',
+                            '${escapeAttribute(
+                                material.file_url || ""
+                            )}'
+                        )"
+                    >
+                        🗑️ Delete
+                    </button>
+
+                `;
+
+
+                materialsList.appendChild(
+                    item
+                );
+
+            }
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "LOAD MATERIALS ERROR:",
+            error
+        );
+
+        materialsList.innerHTML = `
+            <div class="empty">
+                ❌ Imeshindwa kupata materials.
+                <br><br>
+                ${escapeHTML(error.message)}
+            </div>
+        `;
+
+    }
+
+}
+
+
+/* =================================================
+   UPLOAD MATERIAL
+================================================= */
+
+form.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const title =
+            document
+            .getElementById("title")
+            .value
+            .trim();
+
+
+        const course =
+            document
+            .getElementById("course")
+            .value
+            .trim();
+
+
+        const category =
+            document
+            .getElementById("category")
+            .value;
+
+
+        const description =
+            document
+            .getElementById("description")
+            .value
+            .trim();
+
+
+        const file =
+            document
+            .getElementById("file")
+            .files[0];
+
+
+        if(!file){
+
+            showMessage(
+                "❌ Chagua file kwanza.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        button.disabled =
+            true;
+
+        button.textContent =
+            "⏳ Inapakia...";
+
+
+        try{
+
+
+            /* FILE NAME */
+
+            const safeName =
+                file.name
+                .replace(
+                    /[^a-zA-Z0-9._-]/g,
+                    "_"
+                );
+
+
+            const filePath =
+                "materials/" +
+                Date.now() +
+                "_" +
+                safeName;
+
+
+            /* =================================================
+               STORAGE UPLOAD
+            ================================================= */
+
+            const uploadResponse =
+            await fetch(
+
+                SUPABASE_URL +
+                "/storage/v1/object/matitohb/" +
+                filePath,
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            "Bearer " +
+                            ACCESS_TOKEN,
+
+                        "Content-Type":
+                            file.type ||
+                            "application/octet-stream"
+
+                    },
+
+                    body:file
+
+                }
+
+            );
+
+
+            if(!uploadResponse.ok){
+
+                const error =
+                    await uploadResponse.text();
+
+                throw new Error(
+                    "Storage: " +
+                    error
+                );
+
+            }
+
+
+            /* PUBLIC FILE URL */
+
+            const fileUrl =
+                SUPABASE_URL +
+                "/storage/v1/object/public/matitohb/" +
+                filePath;
+
+
+            /* =================================================
+               DATABASE INSERT
+            ================================================= */
+
+            const databaseResponse =
+            await fetch(
+
+                SUPABASE_URL +
+                "/rest/v1/materials",
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            "Bearer " +
+                            ACCESS_TOKEN,
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Prefer":
+                            "return=minimal"
+
+                    },
+
+                    body:JSON.stringify({
+
+                        title:title,
+
+                        course:course,
+
+                        category:category,
+
+                        /* MUHIMU:
+                           DATABASE YAKO INATAKA TYPE
+                        */
+
+                        type:category,
+
+                        description:
+                            description,
+
+                        file_url:
+                            fileUrl,
+
+                        file_name:
+                            file.name
+
+                    })
+
+                }
+
+            );
+
+
+            if(!databaseResponse.ok){
+
+                const error =
+                    await databaseResponse.text();
+
+
+                /* DELETE STORAGE FILE */
+
+                await fetch(
+
+                    SUPABASE_URL +
+                    "/storage/v1/object/matitohb/" +
+                    filePath,
+
+                    {
+
+                        method:"DELETE",
+
+                        headers:{
+
+                            "apikey":
+                                SUPABASE_KEY,
+
+                            "Authorization":
+                                "Bearer " +
+                                ACCESS_TOKEN
+
+                        }
+
+                    }
+
+                );
+
+
+                throw new Error(
+                    "Database: " +
+                    error
+                );
+
+            }
+
+
+            /* SUCCESS */
+
+            showMessage(
+                "✅ Material imehifadhiwa vizuri!",
+                "success"
+            );
+
+
+            form.reset();
+
+
+            await loadMaterials();
+
+        }
+
+
+        catch(error){
+
+            console.error(
+                "UPLOAD ERROR:",
+                error
+            );
+
+
+            showMessage(
+                "❌ " +
+                error.message,
+                "error"
+            );
+
+        }
+
+
+        finally{
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "📤 Upload Material";
+
+        }
+
+    }
+);
+
+
+/* =================================================
+   DELETE MATERIAL
+================================================= */
+
+async function deleteMaterial(
+    id,
+    fileUrl
+){
+
+    const confirmDelete =
+        confirm(
+            "Una uhakika unataka kufuta material hii?"
+        );
+
+
+    if(!confirmDelete){
+
+        return;
+
+    }
+
+
+    try{
+
+        const response =
+        await fetch(
+
+            SUPABASE_URL +
+            "/rest/v1/materials?id=eq." +
+            encodeURIComponent(id),
+
+            {
+
+                method:"DELETE",
+
+                headers:{
+
+                    "apikey":
+                        SUPABASE_KEY,
+
+                    "Authorization":
+                        "Bearer " +
+                        ACCESS_TOKEN,
+
+                    "Prefer":
+                        "return=minimal"
+
+                }
+
+            }
+
+        );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(
+                "Database: " + error
+            );
+
+        }
+
+
+        /* DELETE STORAGE FILE */
+
+        if(fileUrl){
+
+            const marker =
+                "/object/public/matitohb/";
+
+            const position =
+                fileUrl.indexOf(marker);
+
+
+            if(position !== -1){
+
+                const filePath =
+                    fileUrl.substring(
+                        position +
+                        marker.length
+                    );
+
+
+                await fetch(
+
+                    SUPABASE_URL +
+                    "/storage/v1/object/matitohb/" +
+                    filePath,
+
+                    {
+
+                        method:"DELETE",
+
+                        headers:{
+
+                            "apikey":
+                                SUPABASE_KEY,
+
+                            "Authorization":
+                                "Bearer " +
+                                ACCESS_TOKEN
+
+                        }
+
+                    }
+
+                );
+
+            }
+
+        }
+
+
+        showMessage(
+            "✅ Material imefutwa.",
+            "success"
+        );
+
+
+        await loadMaterials();
+
+    }
+
+
+    catch(error){
+
+        console.error(
+            "DELETE ERROR:",
+            error
+        );
+
+
+        showMessage(
+            "❌ Imeshindwa kufuta: " +
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   LOGOUT
+================================================= */
+
+function logout(){
+
+    localStorage.removeItem(
+        "matitohb_access_token"
+    );
+
+    localStorage.removeItem(
+        "matitohb_refresh_token"
+    );
+
+    localStorage.removeItem(
+        "matitohb_user"
+    );
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* =================================================
+   SECURITY HELPERS
+================================================= */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+function escapeAttribute(text){
+
+    return String(text)
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'")
+        .replace(/"/g,"&quot;");
+
+}
+
+
+/* =================================================
+   START
+================================================= */
+
+loadMaterials();
+
+</script>
+
+</body>
+</html>  
