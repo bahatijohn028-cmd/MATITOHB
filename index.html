@@ -8,36 +8,50 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>MATITOHB HUB</title>
+<meta name="description"
+content="MATITOHB-HUB - Academic Materials Platform">
+
+<title>MATITOHB-HUB | Academic Materials</title>
 
 <style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f3f7fb;
+    background:#f4f7fb;
     color:#172033;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
 
     background:
     linear-gradient(
         135deg,
-        #071952,
-        #088395
+        #111827,
+        #1f2937
     );
 
     color:white;
 
-    padding:18px 6%;
+    padding:14px 6%;
 
     display:flex;
 
@@ -48,88 +62,275 @@ body{
     gap:20px;
 
     box-shadow:
-    0 4px 15px rgba(0,0,0,.15);
+    0 4px 18px rgba(0,0,0,.18);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
 
 }
 
-.logo{
 
-    font-size:23px;
+/* =====================================================
+   LOGO
+   RED LOGO WITH LARGE M AND H
+===================================================== */
 
-    font-weight:bold;
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:white;
 
 }
 
-.logo span{
 
-    color:#35e0a1;
+/* Logo box */
+
+.logo-box{
+
+    width:58px;
+
+    height:58px;
+
+    background:#d90429;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 15px rgba(217,4,41,.35);
 
 }
+
+
+/* Big M */
+
+.logo-m{
+
+    position:absolute;
+
+    left:5px;
+
+    top:7px;
+
+    font-size:32px;
+
+    line-height:1;
+
+    font-weight:900;
+
+    color:white;
+
+}
+
+
+/* Big H */
+
+.logo-h{
+
+    position:absolute;
+
+    right:4px;
+
+    bottom:3px;
+
+    font-size:31px;
+
+    line-height:1;
+
+    font-weight:900;
+
+    color:#111827;
+
+}
+
+
+/* Logo text */
+
+.logo-text{
+
+    font-size:21px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+}
+
+.logo-text span{
+
+    color:#ff304f;
+
+}
+
+
+/* =====================================================
+   ADMIN BUTTON
+===================================================== */
 
 .admin-btn{
 
-    background:#35e0a1;
+    background:#d90429;
 
-    color:#071952;
+    color:white;
 
-    padding:10px 18px;
+    padding:11px 20px;
 
-    border-radius:20px;
+    border-radius:25px;
 
     text-decoration:none;
 
     font-weight:bold;
 
+    transition:.25s;
+
 }
 
-/* ================= HERO ================= */
+.admin-btn:hover{
+
+    background:#b80020;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
 
     background:
+
     linear-gradient(
         135deg,
-        #071952,
-        #088395
+        #111827,
+        #374151
     );
 
     color:white;
 
-    padding:65px 20px;
+    padding:75px 20px;
 
     text-align:center;
 
+    position:relative;
+
+    overflow:hidden;
+
 }
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:#d90429;
+
+    border-radius:50%;
+
+    opacity:.12;
+
+    top:-120px;
+
+    right:-80px;
+
+}
+
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    background:#d90429;
+
+    border-radius:50%;
+
+    opacity:.10;
+
+    bottom:-130px;
+
+    left:-70px;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
 
 .hero h1{
 
-    font-size:42px;
+    font-size:44px;
 
-    margin-bottom:15px;
+    margin-bottom:16px;
+
+    font-weight:900;
 
 }
+
 
 .hero h1 span{
 
-    color:#35e0a1;
+    color:#ff304f;
 
 }
+
 
 .hero p{
 
     font-size:18px;
 
-    max-width:700px;
+    max-width:720px;
 
     margin:auto;
 
-    line-height:1.6;
+    line-height:1.7;
+
+    color:#e5e7eb;
 
 }
 
+
 .hero-buttons{
 
-    margin-top:25px;
+    margin-top:28px;
 
     display:flex;
 
@@ -141,27 +342,41 @@ body{
 
 }
 
+
 .hero-btn{
 
     display:inline-block;
 
-    padding:13px 22px;
+    padding:14px 24px;
 
-    border-radius:25px;
+    border-radius:28px;
 
     text-decoration:none;
 
     font-weight:bold;
 
+    transition:.25s;
+
 }
+
 
 .hero-btn.primary{
 
-    background:#35e0a1;
+    background:#d90429;
 
-    color:#071952;
+    color:white;
 
 }
+
+
+.hero-btn.primary:hover{
+
+    background:#b80020;
+
+    transform:translateY(-2px);
+
+}
+
 
 .hero-btn.secondary{
 
@@ -171,7 +386,19 @@ body{
 
 }
 
-/* ================= SEARCH ================= */
+
+.hero-btn.secondary:hover{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-section{
 
@@ -179,11 +406,14 @@ body{
 
     max-width:1100px;
 
-    margin:-25px auto 30px;
+    margin:-28px auto 25px;
 
     position:relative;
 
+    z-index:5;
+
 }
+
 
 .search-box{
 
@@ -191,22 +421,23 @@ body{
 
     padding:20px;
 
-    border-radius:15px;
+    border-radius:16px;
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,.10);
+    0 8px 28px rgba(0,0,0,.12);
 
 }
+
 
 .search-box input{
 
     width:100%;
 
-    padding:15px;
+    padding:16px;
 
     border:1px solid #d5dce5;
 
-    border-radius:9px;
+    border-radius:10px;
 
     outline:none;
 
@@ -214,16 +445,20 @@ body{
 
 }
 
+
 .search-box input:focus{
 
-    border-color:#088395;
+    border-color:#d90429;
 
     box-shadow:
-    0 0 0 3px rgba(8,131,149,.10);
+    0 0 0 3px rgba(217,4,41,.10);
 
 }
 
-/* ================= FILTER ================= */
+
+/* =====================================================
+   FILTERS
+===================================================== */
 
 .filters{
 
@@ -231,7 +466,7 @@ body{
 
     max-width:1100px;
 
-    margin:0 auto 25px;
+    margin:0 auto 20px;
 
     display:flex;
 
@@ -243,28 +478,30 @@ body{
 
 }
 
+
 .filter-btn{
 
     border:none;
 
     padding:10px 18px;
 
-    border-radius:20px;
+    border-radius:22px;
 
     background:white;
 
-    color:#071952;
+    color:#111827;
 
     font-weight:bold;
 
     cursor:pointer;
 
     box-shadow:
-    0 3px 10px rgba(0,0,0,.07);
+    0 3px 12px rgba(0,0,0,.07);
 
     transition:.2s;
 
 }
+
 
 .filter-btn:hover{
 
@@ -272,15 +509,19 @@ body{
 
 }
 
+
 .filter-btn.active{
 
-    background:#071952;
+    background:#d90429;
 
     color:white;
 
 }
 
-/* ================= RESULTS INFO ================= */
+
+/* =====================================================
+   RESULTS INFO
+===================================================== */
 
 .results-info{
 
@@ -298,7 +539,10 @@ body{
 
 }
 
-/* ================= MATERIALS ================= */
+
+/* =====================================================
+   MATERIAL SECTION
+===================================================== */
 
 .section{
 
@@ -306,9 +550,10 @@ body{
 
     max-width:1100px;
 
-    margin:30px auto;
+    margin:35px auto;
 
 }
+
 
 .section-title{
 
@@ -318,15 +563,17 @@ body{
 
 }
 
+
 .section-title h2{
 
-    color:#071952;
+    color:#111827;
 
-    font-size:28px;
+    font-size:29px;
 
     margin-bottom:8px;
 
 }
+
 
 .section-title p{
 
@@ -334,7 +581,10 @@ body{
 
 }
 
-/* ================= MATERIAL LIST ================= */
+
+/* =====================================================
+   MATERIAL LIST
+===================================================== */
 
 .material-list{
 
@@ -350,16 +600,21 @@ body{
 
 }
 
+
+/* =====================================================
+   MATERIAL CARD
+===================================================== */
+
 .material{
 
     background:white;
 
-    border-radius:15px;
+    border-radius:16px;
 
     padding:20px;
 
     box-shadow:
-    0 7px 20px rgba(0,0,0,.07);
+    0 7px 22px rgba(0,0,0,.07);
 
     border:1px solid #e5e9ef;
 
@@ -367,32 +622,52 @@ body{
 
 }
 
+
 .material:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
     box-shadow:
-    0 12px 28px rgba(0,0,0,.12);
+    0 14px 30px rgba(0,0,0,.12);
 
 }
+
 
 .material-icon{
 
-    font-size:42px;
+    width:55px;
 
-    margin-bottom:12px;
+    height:55px;
+
+    background:#fff0f2;
+
+    color:#d90429;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    margin-bottom:14px;
 
 }
 
+
 .material h3{
 
-    color:#071952;
+    color:#111827;
 
     margin-bottom:10px;
 
     line-height:1.4;
 
 }
+
 
 .material p{
 
@@ -404,13 +679,14 @@ body{
 
 }
 
+
 .badge{
 
     display:inline-block;
 
-    background:#eaf7f7;
+    background:#fff0f2;
 
-    color:#087f8d;
+    color:#d90429;
 
     padding:6px 10px;
 
@@ -421,6 +697,11 @@ body{
     font-weight:bold;
 
 }
+
+
+/* =====================================================
+   OPEN MATERIAL BUTTON
+===================================================== */
 
 .open-btn{
 
@@ -435,19 +716,33 @@ body{
     background:
     linear-gradient(
         135deg,
-        #071952,
-        #088395
+        #111827,
+        #374151
     );
 
     color:white;
 
     text-decoration:none;
 
-    border-radius:8px;
+    border-radius:9px;
 
     font-weight:bold;
 
+    transition:.2s;
+
 }
+
+
+.open-btn:hover{
+
+    background:#d90429;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
 
 .empty{
 
@@ -466,7 +761,10 @@ body{
 
 }
 
-/* ================= STATS ================= */
+
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats{
 
@@ -474,34 +772,33 @@ body{
 
     max-width:1100px;
 
-    margin:40px auto;
+    margin:45px auto;
 
     display:grid;
 
     grid-template-columns:
-    repeat(
-        3,
-        1fr
-    );
+    repeat(3,1fr);
 
-    gap:15px;
+    gap:16px;
 
 }
+
 
 .stat{
 
     background:white;
 
-    padding:25px;
+    padding:26px;
 
     text-align:center;
 
-    border-radius:15px;
+    border-radius:16px;
 
     box-shadow:
     0 7px 20px rgba(0,0,0,.06);
 
 }
+
 
 .stat strong{
 
@@ -509,11 +806,12 @@ body{
 
     font-size:30px;
 
-    color:#071952;
+    color:#d90429;
 
-    margin-bottom:7px;
+    margin-bottom:8px;
 
 }
+
 
 .stat span{
 
@@ -521,7 +819,10 @@ body{
 
 }
 
-/* ================= WHATSAPP ================= */
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .whatsapp-section{
 
@@ -529,13 +830,13 @@ body{
 
     max-width:800px;
 
-    margin:45px auto;
+    margin:50px auto;
 
     text-align:center;
 
     background:white;
 
-    padding:30px;
+    padding:32px;
 
     border-radius:18px;
 
@@ -544,13 +845,15 @@ body{
 
 }
 
+
 .whatsapp-section h2{
 
-    color:#071952;
+    color:#111827;
 
     margin-bottom:10px;
 
 }
+
 
 .whatsapp-section p{
 
@@ -559,6 +862,7 @@ body{
     margin-bottom:20px;
 
 }
+
 
 .whatsapp{
 
@@ -576,61 +880,111 @@ body{
 
     font-weight:bold;
 
+    transition:.2s;
+
 }
 
-/* ================= FOOTER ================= */
+
+.whatsapp:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
 
-    background:#071952;
+    background:#111827;
 
     color:white;
 
     text-align:center;
 
-    padding:30px 20px;
+    padding:32px 20px;
 
-    margin-top:50px;
+    margin-top:55px;
 
 }
+
 
 .footer p{
 
-    margin:7px 0;
+    margin:8px 0;
 
 }
+
 
 .footer a{
 
-    color:#35e0a1;
+    color:#ff304f;
 
     text-decoration:none;
 
+    font-weight:bold;
+
 }
 
-/* ================= MOBILE ================= */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:700px){
 
     .header{
 
-        flex-direction:column;
-
-        text-align:center;
+        padding:12px 5%;
 
     }
+
+
+    .logo-box{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+
+    .logo-m{
+
+        font-size:28px;
+
+    }
+
+
+    .logo-h{
+
+        font-size:27px;
+
+    }
+
+
+    .logo-text{
+
+        font-size:17px;
+
+    }
+
 
     .hero{
 
-        padding:50px 18px;
+        padding:55px 18px;
 
     }
+
 
     .hero h1{
 
-        font-size:31px;
+        font-size:32px;
 
     }
+
 
     .hero p{
 
@@ -638,17 +992,57 @@ body{
 
     }
 
+
     .stats{
 
         grid-template-columns:1fr;
 
     }
 
+
     .filter-btn{
+
+        padding:9px 13px;
+
+        font-size:13px;
+
+    }
+
+
+    .admin-btn{
 
         padding:9px 14px;
 
         font-size:13px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media(max-width:420px){
+
+    .logo-text{
+
+        display:none;
+
+    }
+
+
+    .header{
+
+        justify-content:space-between;
+
+    }
+
+
+    .hero h1{
+
+        font-size:28px;
 
     }
 
@@ -662,15 +1056,43 @@ body{
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
-    <div class="logo">
 
-        📚 MATITOHB <span>HUB</span>
+    <a
+        href="index.html"
+        class="logo-area"
+    >
 
-    </div>
+        <!-- RED LOGO -->
+
+        <div class="logo-box">
+
+            <div class="logo-m">
+                M
+            </div>
+
+            <div class="logo-h">
+                H
+            </div>
+
+        </div>
+
+
+        <div class="logo-text">
+
+            MATITOHB
+            <span>
+                -HUB
+            </span>
+
+        </div>
+
+    </a>
 
 
     <a
@@ -682,64 +1104,84 @@ body{
 
     </a>
 
+
 </header>
 
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
-    <h1>
 
-        Karibu <span>MATITOHB HUB</span>
-
-    </h1>
+    <div class="hero-content">
 
 
-    <p>
+        <h1>
 
-        Sehemu rahisi ya kupata Notes,
-        Assignments, Past Papers na
-        materials mbalimbali za masomo.
+            Karibu
+            <span>
+                MATITOHB-HUB
+            </span>
 
-    </p>
-
-
-    <div class="hero-buttons">
-
-        <a
-            href="#materials"
-            class="hero-btn primary"
-        >
-
-            📚 Angalia Materials
-
-        </a>
+        </h1>
 
 
-        <a
-            href="https://wa.me/255680159556"
-            target="_blank"
-            rel="noopener"
-            class="hero-btn secondary"
-        >
+        <p>
 
-            💬 WhatsApp
+            Sehemu rahisi ya kupata Notes,
+            Assignments, Past Papers na
+            materials mbalimbali za masomo.
 
-        </a>
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#materials"
+                class="hero-btn primary"
+            >
+
+                📚 Angalia Materials
+
+            </a>
+
+
+            <a
+                href="https://wa.me/255680159556"
+                target="_blank"
+                rel="noopener"
+                class="hero-btn secondary"
+            >
+
+                💬 WhatsApp
+
+            </a>
+
+
+        </div>
+
 
     </div>
+
 
 </section>
 
 
 
-<!-- ================= SEARCH ================= -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <section class="search-section">
 
+
     <div class="search-box">
+
 
         <input
             type="search"
@@ -748,15 +1190,20 @@ body{
             autocomplete="off"
         >
 
+
     </div>
+
 
 </section>
 
 
 
-<!-- ================= FILTER ================= -->
+<!-- =====================================================
+     FILTERS
+===================================================== -->
 
 <div class="filters">
+
 
     <button
         type="button"
@@ -812,41 +1259,55 @@ body{
 
     </button>
 
+
 </div>
 
 
 
-<!-- ================= RESULTS INFO ================= -->
+<!-- =====================================================
+     RESULTS
+===================================================== -->
 
 <div
     id="resultsInfo"
     class="results-info"
 >
 
-    ⏳ Inapakia...
+    ⏳ Inapakia materials...
 
 </div>
 
 
 
-<!-- ================= MATERIALS ================= -->
+<!-- =====================================================
+     MATERIALS
+===================================================== -->
 
 <section
     class="section"
     id="materials"
 >
 
+
     <div class="section-title">
 
+
         <h2>
+
             📚 Academic Materials
+
         </h2>
 
+
         <p>
+
             Chagua material unayotaka kusoma.
+
         </p>
 
+
     </div>
+
 
 
     <div
@@ -854,75 +1315,113 @@ body{
         class="material-list"
     >
 
+
         <div class="empty">
 
             ⏳ Inapakia materials...
 
         </div>
 
+
     </div>
+
 
 </section>
 
 
 
-<!-- ================= STATS ================= -->
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
 
 <section class="stats">
 
+
     <div class="stat">
+
 
         <strong id="materialCount">
+
             0
+
         </strong>
 
+
         <span>
+
             Materials
+
         </span>
+
 
     </div>
 
 
+
     <div class="stat">
 
+
         <strong>
+
             📚
+
         </strong>
 
+
         <span>
+
             Academic Resources
+
         </span>
 
+
     </div>
+
 
 
     <div class="stat">
 
+
         <strong>
+
             💬
+
         </strong>
 
+
         <span>
+
             WhatsApp Support
+
         </span>
 
+
     </div>
+
 
 </section>
 
 
 
-<!-- ================= WHATSAPP ================= -->
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
 
 <section class="whatsapp-section">
 
+
     <h2>
+
         💬 Unahitaji msaada?
+
     </h2>
 
+
     <p>
+
         Wasiliana nasi kupitia WhatsApp
         kwa maswali au materials.
+
     </p>
 
 
@@ -937,31 +1436,38 @@ body{
 
     </a>
 
+
 </section>
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
+
     <p>
 
-        📚 <strong>
-        MATITOHB HUB
+        📚
+        <strong>
+            MATITOHB-HUB
         </strong>
 
     </p>
 
 
     <p>
+
         Academic Materials Platform
+
     </p>
 
 
     <p>
 
-        © 2026 MATITOHB HUB.
+        © 2026 MATITOHB-HUB.
         All Rights Reserved.
 
     </p>
@@ -983,15 +1489,16 @@ body{
 
     </p>
 
+
 </footer>
 
 
 
 <script>
 
-/* =================================================
+/* =====================================================
    SUPABASE CONNECTION
-================================================= */
+===================================================== */
 
 const SUPABASE_URL =
 "https://weinnjprzipdhjbygdmg.supabase.co";
@@ -1001,9 +1508,9 @@ const SUPABASE_KEY =
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s";
 
 
-/* =================================================
+/* =====================================================
    ELEMENTS
-================================================= */
+===================================================== */
 
 const materialsList =
 document.getElementById(
@@ -1035,20 +1542,18 @@ document.querySelectorAll(
 );
 
 
-/* =================================================
+/* =====================================================
    DATA
-================================================= */
+===================================================== */
 
 let allMaterials = [];
 
-
-let selectedCategory =
-    "All";
+let selectedCategory = "All";
 
 
-/* =================================================
+/* =====================================================
    NORMALIZE TEXT
-================================================= */
+===================================================== */
 
 function normalizeText(value){
 
@@ -1060,9 +1565,24 @@ function normalizeText(value){
 }
 
 
-/* =================================================
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+function getMaterialCategory(material){
+
+    return normalizeText(
+        material.category ||
+        material.type ||
+        "Other"
+    );
+
+}
+
+
+/* =====================================================
    LOAD MATERIALS
-================================================= */
+===================================================== */
 
 async function loadMaterials(){
 
@@ -1082,6 +1602,7 @@ async function loadMaterials(){
 
 
     try{
+
 
         const response =
         await fetch(
@@ -1129,7 +1650,7 @@ async function loadMaterials(){
         if(!Array.isArray(data)){
 
             throw new Error(
-                "Database haikurudisha list ya materials."
+                "Database haikurudisha materials."
             );
 
         }
@@ -1143,6 +1664,7 @@ async function loadMaterials(){
 
 
         displayMaterials();
+
 
     }
 
@@ -1178,28 +1700,12 @@ async function loadMaterials(){
 }
 
 
-/* =================================================
-   GET MATERIAL CATEGORY
-================================================= */
-
-function getMaterialCategory(material){
-
-    return normalizeText(
-
-        material.category ||
-        material.type ||
-        "Other"
-
-    );
-
-}
-
-
-/* =================================================
+/* =====================================================
    DISPLAY MATERIALS
-================================================= */
+===================================================== */
 
 function displayMaterials(){
+
 
     const searchText =
         normalizeText(
@@ -1213,13 +1719,10 @@ function displayMaterials(){
         );
 
 
-    /*
-       FILTER MATERIALS
-    */
-
     const filtered =
         allMaterials.filter(
             function(material){
+
 
                 const title =
                     normalizeText(
@@ -1245,14 +1748,6 @@ function displayMaterials(){
                     );
 
 
-                /*
-                   SEARCH INAANGALIA:
-                   TITLE
-                   COURSE
-                   CATEGORY
-                   DESCRIPTION
-                */
-
                 const matchesSearch =
 
                     searchText === "" ||
@@ -1274,10 +1769,6 @@ function displayMaterials(){
                     );
 
 
-                /*
-                   CATEGORY FILTER
-                */
-
                 const matchesCategory =
 
                     selected === "all" ||
@@ -1294,9 +1785,7 @@ function displayMaterials(){
         );
 
 
-    /*
-       RESULTS INFO
-    */
+    /* RESULTS */
 
     if(
         searchText !== "" ||
@@ -1323,13 +1812,9 @@ function displayMaterials(){
     }
 
 
-    /*
-       NO RESULTS
-    */
+    /* NO RESULTS */
 
-    if(
-        filtered.length === 0
-    ){
+    if(filtered.length === 0){
 
         materialsList.innerHTML = `
 
@@ -1351,19 +1836,14 @@ function displayMaterials(){
     }
 
 
-    /*
-       CLEAR LIST
-    */
-
     materialsList.innerHTML = "";
 
 
-    /*
-       CREATE MATERIAL CARDS
-    */
+    /* MATERIAL CARDS */
 
     filtered.forEach(
         function(material){
+
 
             const item =
                 document.createElement(
@@ -1400,10 +1880,6 @@ function displayMaterials(){
                 material.file_url ||
                 "#";
 
-
-            /*
-               CARD HTML
-            */
 
             item.innerHTML = `
 
@@ -1492,15 +1968,16 @@ function displayMaterials(){
                 item
             );
 
+
         }
     );
 
 }
 
 
-/* =================================================
+/* =====================================================
    SEARCH
-================================================= */
+===================================================== */
 
 searchInput.addEventListener(
     "input",
@@ -1512,21 +1989,18 @@ searchInput.addEventListener(
 );
 
 
-/* =================================================
-   FILTER BUTTONS
-================================================= */
+/* =====================================================
+   FILTERS
+===================================================== */
 
 filterButtons.forEach(
     function(button){
+
 
         button.addEventListener(
             "click",
             function(){
 
-                /*
-                   Ondoa active
-                   kwa buttons zote
-                */
 
                 filterButtons.forEach(
                     function(btn){
@@ -1539,19 +2013,10 @@ filterButtons.forEach(
                 );
 
 
-                /*
-                   Weka active
-                   kwenye button hii
-                */
-
                 this.classList.add(
                     "active"
                 );
 
-
-                /*
-                   Chukua category
-                */
 
                 selectedCategory =
                     this.getAttribute(
@@ -1559,22 +2024,20 @@ filterButtons.forEach(
                     ) || "All";
 
 
-                /*
-                   Onyesha results
-                */
-
                 displayMaterials();
+
 
             }
         );
+
 
     }
 );
 
 
-/* =================================================
-   ESCAPE HTML
-================================================= */
+/* =====================================================
+   SECURITY
+===================================================== */
 
 function escapeHTML(text){
 
@@ -1593,25 +2056,41 @@ function escapeHTML(text){
 }
 
 
-/* =================================================
-   ESCAPE URL ATTRIBUTE
-================================================= */
-
 function escapeAttribute(text){
 
     return String(text || "")
-        .replace(/&/g,"&amp;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#39;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;");
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#39;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        );
 
 }
 
 
-/* =================================================
-   START WEBSITE
-================================================= */
+/* =====================================================
+   START
+===================================================== */
 
 loadMaterials();
 
@@ -1620,4 +2099,4 @@ loadMaterials();
 
 </body>
 
-</html>  
+    </html> 
