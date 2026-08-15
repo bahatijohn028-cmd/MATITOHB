@@ -15,6 +15,10 @@ content="MATITOHB-HUB - Academic Materials Platform">
 
 <style>
 
+/* =====================================================
+   GENERAL
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -31,41 +35,61 @@ body{
     color:#172033;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         135deg,
         #111827,
         #1f2937
     );
 
     color:white;
+
     padding:14px 6%;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     gap:20px;
 
-    box-shadow:0 4px 18px rgba(0,0,0,.18);
+    box-shadow:
+    0 4px 18px rgba(0,0,0,.18);
 
     position:sticky;
+
     top:0;
+
     z-index:1000;
+
 }
 
 .logo-area{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     text-decoration:none;
+
     color:white;
+
 }
 
 .logo-box{
+
     width:58px;
+
     height:58px;
 
     background:#d90429;
@@ -73,51 +97,74 @@ body{
     border-radius:12px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     position:relative;
+
     overflow:hidden;
 
-    box-shadow:0 5px 15px rgba(217,4,41,.35);
+    box-shadow:
+    0 5px 15px rgba(217,4,41,.35);
+
 }
 
 .logo-m{
+
     position:absolute;
+
     left:5px;
+
     top:7px;
 
     font-size:32px;
+
     line-height:1;
+
     font-weight:900;
 
     color:white;
+
 }
 
 .logo-h{
+
     position:absolute;
+
     right:4px;
+
     bottom:3px;
 
     font-size:31px;
+
     line-height:1;
+
     font-weight:900;
 
     color:#111827;
+
 }
 
 .logo-text{
+
     font-size:21px;
+
     font-weight:900;
-    letter-spacing:.5px;
+
 }
 
 .logo-text span{
+
     color:#ff304f;
+
 }
 
 .admin-btn{
+
     background:#d90429;
+
     color:white;
 
     padding:11px 20px;
@@ -125,20 +172,20 @@ body{
     border-radius:25px;
 
     text-decoration:none;
+
     font-weight:bold;
 
-    transition:.25s;
 }
 
-.admin-btn:hover{
-    background:#b80020;
-    transform:translateY(-2px);
-}
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         135deg,
         #111827,
         #374151
@@ -150,62 +197,26 @@ body{
 
     text-align:center;
 
-    position:relative;
-    overflow:hidden;
-}
-
-.hero::before{
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    background:#d90429;
-
-    border-radius:50%;
-
-    opacity:.12;
-
-    top:-120px;
-    right:-80px;
-}
-
-.hero::after{
-    content:"";
-
-    position:absolute;
-
-    width:250px;
-    height:250px;
-
-    background:#d90429;
-
-    border-radius:50%;
-
-    opacity:.10;
-
-    bottom:-130px;
-    left:-70px;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
 }
 
 .hero h1{
+
     font-size:44px;
+
     margin-bottom:16px;
+
     font-weight:900;
+
 }
 
 .hero h1 span{
+
     color:#ff304f;
+
 }
 
 .hero p{
+
     font-size:18px;
 
     max-width:720px;
@@ -215,9 +226,11 @@ body{
     line-height:1.7;
 
     color:#e5e7eb;
+
 }
 
 .hero-buttons{
+
     margin-top:28px;
 
     display:flex;
@@ -227,9 +240,11 @@ body{
     gap:12px;
 
     flex-wrap:wrap;
+
 }
 
 .hero-btn{
+
     display:inline-block;
 
     padding:14px 24px;
@@ -240,127 +255,129 @@ body{
 
     font-weight:bold;
 
-    transition:.25s;
 }
 
 .hero-btn.primary{
-    background:#d90429;
-    color:white;
-}
 
-.hero-btn.primary:hover{
-    background:#b80020;
-    transform:translateY(-2px);
+    background:#d90429;
+
+    color:white;
+
 }
 
 .hero-btn.secondary{
+
     border:2px solid white;
+
     color:white;
+
 }
 
-.hero-btn.secondary:hover{
-    background:white;
-    color:#111827;
-}
 
-/* ================= ANNOUNCEMENTS ================= */
+/* =====================================================
+   ADVERTISEMENTS
+===================================================== */
 
-.announcement-section{
+.ads-section{
 
     width:92%;
+
     max-width:1100px;
 
     margin:30px auto;
 
 }
 
-.announcement-title{
+.ads-title{
 
     text-align:center;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
 }
 
-.announcement-title h2{
+.ads-title h2{
 
     color:#111827;
 
-    font-size:29px;
-
-    margin-bottom:7px;
+    margin-bottom:6px;
 
 }
 
-.announcement-title p{
+.ads-title p{
 
     color:#667085;
 
 }
 
-.announcement-list{
+.ads-list{
 
     display:grid;
 
-    gap:15px;
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(280px,1fr)
+    );
+
+    gap:18px;
 
 }
 
-.announcement{
+.ad-card{
 
     background:white;
 
-    border-left:6px solid #d90429;
-
-    border-radius:14px;
+    border-left:5px solid #d90429;
 
     padding:20px;
 
-    box-shadow:0 7px 22px rgba(0,0,0,.08);
+    border-radius:14px;
+
+    box-shadow:
+    0 7px 22px rgba(0,0,0,.08);
 
 }
 
-.announcement h3{
+.ad-card h3{
 
     color:#111827;
 
     margin-bottom:10px;
 
-    font-size:20px;
-
 }
 
-.announcement p{
+.ad-card p{
 
     color:#667085;
 
     line-height:1.6;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
 }
 
-.announcement-date{
+.ad-date{
 
     font-size:12px;
 
-    color:#999;
-
-    margin-bottom:10px;
+    color:#98a2b3;
 
 }
 
-.announcement-link{
+.ad-link{
 
     display:inline-block;
+
+    margin-top:10px;
 
     background:#d90429;
 
     color:white;
 
-    padding:9px 15px;
+    padding:10px 16px;
 
-    border-radius:20px;
+    border-radius:8px;
 
     text-decoration:none;
 
@@ -368,13 +385,7 @@ body{
 
 }
 
-.announcement-link:hover{
-
-    background:#b80020;
-
-}
-
-.no-announcement{
+.no-ads{
 
     background:white;
 
@@ -388,11 +399,15 @@ body{
 
 }
 
-/* ================= SEARCH ================= */
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-section{
 
     width:92%;
+
     max-width:1100px;
 
     margin:30px auto 25px;
@@ -407,7 +422,8 @@ body{
 
     border-radius:16px;
 
-    box-shadow:0 8px 28px rgba(0,0,0,.12);
+    box-shadow:
+    0 8px 28px rgba(0,0,0,.12);
 
 }
 
@@ -431,16 +447,17 @@ body{
 
     border-color:#d90429;
 
-    box-shadow:
-    0 0 0 3px rgba(217,4,41,.10);
-
 }
 
-/* ================= FILTERS ================= */
+
+/* =====================================================
+   FILTERS
+===================================================== */
 
 .filters{
 
     width:92%;
+
     max-width:1100px;
 
     margin:0 auto 20px;
@@ -471,15 +488,8 @@ body{
 
     cursor:pointer;
 
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-
-    transition:.2s;
-
-}
-
-.filter-btn:hover{
-
-    transform:translateY(-2px);
+    box-shadow:
+    0 3px 12px rgba(0,0,0,.07);
 
 }
 
@@ -491,11 +501,15 @@ body{
 
 }
 
-/* ================= RESULTS ================= */
+
+/* =====================================================
+   RESULTS
+===================================================== */
 
 .results-info{
 
     width:92%;
+
     max-width:1100px;
 
     margin:0 auto 20px;
@@ -508,11 +522,15 @@ body{
 
 }
 
-/* ================= MATERIAL SECTION ================= */
+
+/* =====================================================
+   MATERIAL SECTION
+===================================================== */
 
 .section{
 
     width:92%;
+
     max-width:1100px;
 
     margin:35px auto;
@@ -543,8 +561,6 @@ body{
 
 }
 
-/* ================= MATERIAL LIST ================= */
-
 .material-list{
 
     display:grid;
@@ -559,8 +575,6 @@ body{
 
 }
 
-/* ================= MATERIAL ================= */
-
 .material{
 
     background:white;
@@ -569,25 +583,17 @@ body{
 
     padding:20px;
 
-    box-shadow:0 7px 22px rgba(0,0,0,.07);
+    box-shadow:
+    0 7px 22px rgba(0,0,0,.07);
 
     border:1px solid #e5e9ef;
-
-    transition:.25s;
-
-}
-
-.material:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 14px 30px rgba(0,0,0,.12);
 
 }
 
 .material-icon{
 
     width:55px;
+
     height:55px;
 
     background:#fff0f2;
@@ -599,6 +605,7 @@ body{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     font-size:30px;
@@ -663,7 +670,8 @@ body{
 
     padding:12px;
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         135deg,
         #111827,
         #374151
@@ -677,8 +685,6 @@ body{
 
     font-weight:bold;
 
-    transition:.2s;
-
 }
 
 .open-btn:hover{
@@ -686,8 +692,6 @@ body{
     background:#d90429;
 
 }
-
-/* ================= EMPTY ================= */
 
 .empty{
 
@@ -701,15 +705,17 @@ body{
 
     color:#667085;
 
-    box-shadow:0 7px 20px rgba(0,0,0,.06);
-
 }
 
-/* ================= STATS ================= */
+
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats{
 
     width:92%;
+
     max-width:1100px;
 
     margin:45px auto;
@@ -733,7 +739,8 @@ body{
 
     border-radius:16px;
 
-    box-shadow:0 7px 20px rgba(0,0,0,.06);
+    box-shadow:
+    0 7px 20px rgba(0,0,0,.06);
 
 }
 
@@ -755,11 +762,15 @@ body{
 
 }
 
-/* ================= WHATSAPP ================= */
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .whatsapp-section{
 
     width:92%;
+
     max-width:800px;
 
     margin:50px auto;
@@ -772,7 +783,8 @@ body{
 
     border-radius:18px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
 
 }
 
@@ -808,17 +820,12 @@ body{
 
     font-weight:bold;
 
-    transition:.2s;
-
 }
 
-.whatsapp:hover{
 
-    transform:translateY(-2px);
-
-}
-
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
 
@@ -850,7 +857,10 @@ body{
 
 }
 
-/* ================= MOBILE ================= */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:700px){
 
@@ -863,54 +873,59 @@ body{
     .logo-box{
 
         width:50px;
+
         height:50px;
+
     }
 
     .logo-m{
 
         font-size:28px;
+
     }
 
     .logo-h{
 
         font-size:27px;
+
     }
 
     .logo-text{
 
         font-size:17px;
+
     }
 
     .hero{
 
         padding:55px 18px;
+
     }
 
     .hero h1{
 
         font-size:32px;
+
     }
 
     .hero p{
 
         font-size:16px;
+
     }
 
     .stats{
 
         grid-template-columns:1fr;
+
     }
 
     .filter-btn{
 
         padding:9px 13px;
-        font-size:13px;
-    }
 
-    .admin-btn{
-
-        padding:9px 14px;
         font-size:13px;
+
     }
 
 }
@@ -920,16 +935,19 @@ body{
     .logo-text{
 
         display:none;
+
     }
 
     .header{
 
         justify-content:space-between;
+
     }
 
     .hero h1{
 
         font-size:28px;
+
     }
 
 }
@@ -938,406 +956,407 @@ body{
 
 </head>
 
+
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
-<a
-href="index.html"
-class="logo-area"
->
+    <a
+        href="index.html"
+        class="logo-area"
+    >
 
-<div class="logo-box">
+        <div class="logo-box">
 
-<div class="logo-m">
-M
-</div>
+            <div class="logo-m">
+                M
+            </div>
 
-<div class="logo-h">
-H
-</div>
+            <div class="logo-h">
+                H
+            </div>
 
-</div>
+        </div>
 
-<div class="logo-text">
+        <div class="logo-text">
 
-MATITOHB
-<span>-HUB</span>
+            MATITOHB
+            <span>-HUB</span>
 
-</div>
+        </div>
 
-</a>
+    </a>
 
 
-<a
-href="login.html"
-class="admin-btn"
->
+    <a
+        href="login.html"
+        class="admin-btn"
+    >
 
-🔐 Admin
+        🔐 Admin
 
-</a>
+    </a>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
-<div class="hero-content">
+    <h1>
 
-<h1>
+        Karibu
+        <span>
+            MATITOHB-HUB
+        </span>
 
-Karibu
-<span>
-MATITOHB-HUB
-</span>
+    </h1>
 
-</h1>
+    <p>
 
-<p>
+        Sehemu rahisi ya kupata Notes,
+        Assignments, Past Papers na
+        materials mbalimbali za masomo.
 
-Sehemu rahisi ya kupata Notes,
-Assignments, Past Papers na
-materials mbalimbali za masomo.
-
-</p>
+    </p>
 
 
-<div class="hero-buttons">
+    <div class="hero-buttons">
 
-<a
-href="#materials"
-class="hero-btn primary"
->
+        <a
+            href="#materials"
+            class="hero-btn primary"
+        >
 
-📚 Angalia Materials
+            📚 Angalia Materials
 
-</a>
+        </a>
 
 
-<a
-href="https://wa.me/255680159556"
-target="_blank"
-rel="noopener"
-class="hero-btn secondary"
->
+        <a
+            href="https://wa.me/255680159556"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn secondary"
+        >
 
-💬 WhatsApp
+            💬 WhatsApp
 
-</a>
+        </a>
 
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= ANNOUNCEMENTS ================= -->
 
-<section class="announcement-section">
+<!-- =====================================================
+     ADVERTISEMENTS
+===================================================== -->
 
-<div class="announcement-title">
+<section class="ads-section">
 
-<h2>
+    <div class="ads-title">
 
-📢 Matangazo
+        <h2>
+            📢 Matangazo
+        </h2>
 
-</h2>
+        <p>
+            Habari na matangazo kutoka MATITOHB-HUB
+        </p>
 
-<p>
-
-Habari na matangazo kutoka MATITOHB-HUB
-
-</p>
-
-</div>
+    </div>
 
 
-<div
-id="announcementsList"
-class="announcement-list"
->
+    <div
+        id="adsList"
+        class="ads-list"
+    >
 
-<div class="no-announcement">
+        <div class="no-ads">
 
-⏳ Inapakia matangazo...
+            ⏳ Inapakia matangazo...
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= SEARCH ================= -->
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <section class="search-section">
 
-<div class="search-box">
+    <div class="search-box">
 
-<input
-type="search"
-id="searchInput"
-placeholder="🔎 Tafuta material, course, category au description..."
-autocomplete="off"
->
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="🔎 Tafuta material, course, category..."
+            autocomplete="off"
+        >
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= FILTERS ================= -->
+
+<!-- =====================================================
+     FILTERS
+===================================================== -->
 
 <div class="filters">
 
-<button
-type="button"
-class="filter-btn active"
-data-category="All"
->
+    <button
+        type="button"
+        class="filter-btn active"
+        data-category="All"
+    >
 
-📚 Zote
+        📚 Zote
 
-</button>
-
-
-<button
-type="button"
-class="filter-btn"
-data-category="Notes"
->
-
-📘 Notes
-
-</button>
+    </button>
 
 
-<button
-type="button"
-class="filter-btn"
-data-category="Assignments"
->
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Notes"
+    >
 
-📝 Assignments
+        📘 Notes
 
-</button>
-
-
-<button
-type="button"
-class="filter-btn"
-data-category="Past Papers"
->
-
-📄 Past Papers
-
-</button>
+    </button>
 
 
-<button
-type="button"
-class="filter-btn"
-data-category="Other"
->
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Assignments"
+    >
 
-📚 Other
+        📝 Assignments
 
-</button>
+    </button>
+
+
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Past Papers"
+    >
+
+        📄 Past Papers
+
+    </button>
+
+
+    <button
+        type="button"
+        class="filter-btn"
+        data-category="Other"
+    >
+
+        📚 Other
+
+    </button>
 
 </div>
 
 
-<!-- ================= RESULTS ================= -->
+
+<!-- =====================================================
+     RESULTS
+===================================================== -->
 
 <div
-id="resultsInfo"
-class="results-info"
+    id="resultsInfo"
+    class="results-info"
 >
 
-⏳ Inapakia materials...
+    ⏳ Inapakia materials...
 
 </div>
 
 
-<!-- ================= MATERIALS ================= -->
+
+<!-- =====================================================
+     MATERIALS
+===================================================== -->
 
 <section
-class="section"
-id="materials"
+    class="section"
+    id="materials"
 >
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>
+        <h2>
+            📚 Academic Materials
+        </h2>
 
-📚 Academic Materials
+        <p>
+            Chagua material unayotaka kusoma.
+        </p>
 
-</h2>
-
-<p>
-
-Chagua material unayotaka kusoma.
-
-</p>
-
-</div>
+    </div>
 
 
-<div
-id="materialsList"
-class="material-list"
->
+    <div
+        id="materialsList"
+        class="material-list"
+    >
 
-<div class="empty">
+        <div class="empty">
 
-⏳ Inapakia materials...
+            ⏳ Inapakia materials...
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= STATS ================= -->
+
+<!-- =====================================================
+     STATS
+===================================================== -->
 
 <section class="stats">
 
-<div class="stat">
+    <div class="stat">
 
-<strong id="materialCount">
+        <strong id="materialCount">
+            0
+        </strong>
 
-0
+        <span>
+            Materials
+        </span>
 
-</strong>
-
-<span>
-
-Materials
-
-</span>
-
-</div>
+    </div>
 
 
-<div class="stat">
+    <div class="stat">
 
-<strong id="announcementCount">
+        <strong id="adCount">
+            0
+        </strong>
 
-0
+        <span>
+            Matangazo
+        </span>
 
-</strong>
-
-<span>
-
-Matangazo
-
-</span>
-
-</div>
+    </div>
 
 
-<div class="stat">
+    <div class="stat">
 
-<strong>
+        <strong>
+            💬
+        </strong>
 
-💬
+        <span>
+            WhatsApp Support
+        </span>
 
-</strong>
-
-<span>
-
-WhatsApp Support
-
-</span>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= WHATSAPP ================= -->
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
 
 <section class="whatsapp-section">
 
-<h2>
+    <h2>
+        💬 Unahitaji msaada?
+    </h2>
 
-💬 Unahitaji msaada?
+    <p>
 
-</h2>
+        Wasiliana nasi kupitia WhatsApp
+        kwa maswali au materials.
 
-<p>
-
-Wasiliana nasi kupitia WhatsApp
-kwa maswali au materials.
-
-</p>
+    </p>
 
 
-<a
-href="https://wa.me/255680159556"
-target="_blank"
-rel="noopener"
-class="whatsapp"
->
+    <a
+        href="https://wa.me/255680159556"
+        target="_blank"
+        rel="noopener"
+        class="whatsapp"
+    >
 
-💬 WhatsApp +255 680 159 556
+        💬 WhatsApp +255 680 159 556
 
-</a>
+    </a>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
-<p>
+    <p>
 
-📚
-<strong>
-MATITOHB-HUB
-</strong>
+        📚
+        <strong>
+            MATITOHB-HUB
+        </strong>
 
-</p>
+    </p>
 
-<p>
+    <p>
+        Academic Materials Platform
+    </p>
 
-Academic Materials Platform
+    <p>
+        © 2026 MATITOHB-HUB.
+        All Rights Reserved.
+    </p>
 
-</p>
+    <p>
 
-<p>
+        WhatsApp:
 
-© 2026 MATITOHB-HUB.
-All Rights Reserved.
+        <a
+            href="https://wa.me/255680159556"
+            target="_blank"
+            rel="noopener"
+        >
 
-</p>
+            +255 680 159 556
 
-<p>
+        </a>
 
-WhatsApp:
-
-<a
-href="https://wa.me/255680159556"
-target="_blank"
-rel="noopener"
->
-
-+255 680 159 556
-
-</a>
-
-</p>
+    </p>
 
 </footer>
+
 
 
 <script>
@@ -1351,7 +1370,7 @@ const SUPABASE_URL =
 
 
 const SUPABASE_KEY =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzIiwicmVmIjoid2Vpbm5qcHJ6aXBkaGpieWdmbWciLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc4NjU2NzgxNSwiZXhwIjoyMTAyMTQzODE5fQ.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s";
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlaW5uanByemlwZGhqYnlnZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1Njc4MTUsImV4cCI6MjEwMjE0MzgxNX0.D1WfA0T2IorMgjTg1-WE30FdZo9oHLOZbT28WuQmd6s";
 
 
 /* =====================================================
@@ -1360,43 +1379,37 @@ const SUPABASE_KEY =
 
 const materialsList =
 document.getElementById(
-"materialsList"
+    "materialsList"
 );
 
-
-const announcementsList =
+const adsList =
 document.getElementById(
-"announcementsList"
+    "adsList"
 );
-
 
 const searchInput =
 document.getElementById(
-"searchInput"
+    "searchInput"
 );
-
 
 const materialCount =
 document.getElementById(
-"materialCount"
+    "materialCount"
 );
 
-
-const announcementCount =
+const adCount =
 document.getElementById(
-"announcementCount"
+    "adCount"
 );
-
 
 const resultsInfo =
 document.getElementById(
-"resultsInfo"
+    "resultsInfo"
 );
-
 
 const filterButtons =
 document.querySelectorAll(
-".filter-btn"
+    ".filter-btn"
 );
 
 
@@ -1415,10 +1428,10 @@ let selectedCategory = "All";
 
 function normalizeText(value){
 
-return String(value || "")
-.toLowerCase()
-.trim()
-.replace(/\s+/g," ");
+    return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g," ");
 
 }
 
@@ -1429,13 +1442,13 @@ return String(value || "")
 
 function escapeHTML(text){
 
-const div =
-document.createElement("div");
+    const div =
+        document.createElement("div");
 
-div.textContent =
-String(text || "");
+    div.textContent =
+        String(text || "");
 
-return div.innerHTML;
+    return div.innerHTML;
 
 }
 
@@ -1446,17 +1459,12 @@ return div.innerHTML;
 
 function escapeAttribute(text){
 
-return String(text || "")
-
-.replace(/&/g,"&amp;")
-
-.replace(/"/g,"&quot;")
-
-.replace(/'/g,"&#39;")
-
-.replace(/</g,"&lt;")
-
-.replace(/>/g,"&gt;");
+    return String(text || "")
+        .replace(/&/g,"&amp;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#39;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;");
 
 }
 
@@ -1467,248 +1475,244 @@ return String(text || "")
 
 function getMaterialCategory(material){
 
-return normalizeText(
-
-material.category ||
-"Other"
-
-);
+    return normalizeText(
+        material.category ||
+        material.type ||
+        "Other"
+    );
 
 }
 
 
 /* =====================================================
-   LOAD ANNOUNCEMENTS
+   LOAD ADVERTISEMENTS
 ===================================================== */
 
-async function loadAnnouncements(){
+async function loadAdvertisements(){
 
-announcementsList.innerHTML = `
+    adsList.innerHTML = `
 
-<div class="no-announcement">
+        <div class="no-ads">
 
-⏳ Inapakia matangazo...
+            ⏳ Inapakia matangazo...
 
-</div>
+        </div>
 
-`;
+    `;
 
-try{
 
-const response =
-await fetch(
+    try{
 
-SUPABASE_URL +
-"/rest/v1/announcements?select=*&order=created_at.desc",
+        const response =
+        await fetch(
 
-{
+            SUPABASE_URL +
+            "/rest/v1/advertisements?select=id,title,description,link,created_at&order=created_at.desc",
 
-method:"GET",
+            {
 
-headers:{
+                method:"GET",
 
-"apikey":
-SUPABASE_KEY,
+                headers:{
 
-"Authorization":
-"Bearer " +
-SUPABASE_KEY
+                    "apikey":
+                        SUPABASE_KEY,
 
-}
+                    "Authorization":
+                        "Bearer " +
+                        SUPABASE_KEY,
 
-}
+                    "Content-Type":
+                        "application/json"
 
-);
+                }
 
+            }
 
-if(!response.ok){
+        );
 
-const error =
-await response.text();
 
-throw new Error(error);
+        if(!response.ok){
 
-}
+            const error =
+                await response.text();
 
+            throw new Error(error);
 
-const data =
-await response.json();
+        }
 
 
-announcementCount.textContent =
-data.length;
+        const ads =
+            await response.json();
 
 
-if(
-!Array.isArray(data) ||
-data.length === 0
-){
+        adCount.textContent =
+            Array.isArray(ads)
+            ? ads.length
+            : 0;
 
-announcementsList.innerHTML = `
 
-<div class="no-announcement">
+        if(
+            !Array.isArray(ads) ||
+            ads.length === 0
+        ){
 
-📭 Hakuna matangazo kwa sasa.
+            adsList.innerHTML = `
 
-</div>
+                <div class="no-ads">
 
-`;
+                    📢 Hakuna matangazo kwa sasa.
 
-return;
+                </div>
 
-}
+            `;
 
+            return;
 
-announcementsList.innerHTML = "";
+        }
 
 
-data.forEach(
-function(item){
+        adsList.innerHTML = "";
 
-const announcement =
-document.createElement("div");
 
+        ads.forEach(
+            function(ad){
 
-announcement.className =
-"announcement";
+                const card =
+                    document.createElement("div");
 
+                card.className =
+                    "ad-card";
 
-const title =
-item.title ||
-"Tangazo";
 
+                const title =
+                    ad.title ||
+                    "Tangazo";
 
-const description =
-item.description ||
-"";
 
+                const description =
+                    ad.description ||
+                    "";
 
-const link =
-item.link ||
-"";
 
+                let linkHTML = "";
 
-let dateText = "";
 
+                if(ad.link){
 
-if(item.created_at){
+                    linkHTML = `
 
-const date =
-new Date(item.created_at);
+                        <a
+                            href="${escapeAttribute(ad.link)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="ad-link"
+                        >
 
-if(!isNaN(date)){
+                            🔗 Fungua
 
-dateText =
-date.toLocaleDateString(
-"sw-TZ",
-{
+                        </a>
 
-day:"numeric",
+                    `;
 
-month:"long",
+                }
 
-year:"numeric"
 
-}
+                let dateHTML = "";
 
-);
 
-}
+                if(ad.created_at){
 
-}
+                    const date =
+                        new Date(
+                            ad.created_at
+                        );
 
 
-announcement.innerHTML = `
+                    if(!isNaN(date)){
 
-<h3>
+                        dateHTML = `
 
-📢
-${escapeHTML(title)}
+                            <div class="ad-date">
 
-</h3>
+                                📅
+                                ${escapeHTML(
+                                    date.toLocaleDateString(
+                                        "sw-TZ"
+                                    )
+                                )}
 
+                            </div>
 
-${
-dateText
-?
-`
+                        `;
 
-<div class="announcement-date">
+                    }
 
-📅 ${escapeHTML(dateText)}
+                }
 
-</div>
 
-`
-:
-""
-}
+                card.innerHTML = `
 
+                    <h3>
 
-<p>
+                        📢
+                        ${escapeHTML(title)}
 
-${escapeHTML(description)}
+                    </h3>
 
-</p>
 
+                    <p>
 
-${
-link
-?
+                        ${escapeHTML(
+                            description
+                        )}
 
-`
+                    </p>
 
-<a
-href="${escapeAttribute(link)}"
-target="_blank"
-rel="noopener noreferrer"
-class="announcement-link"
->
 
-🔗 Angalia zaidi
+                    ${dateHTML}
 
-</a>
+                    ${linkHTML}
 
-`
+                `;
 
-:
 
-""
+                adsList.appendChild(card);
 
-}
+            }
+        );
 
-`;
+    }
 
+    catch(error){
 
-announcementsList.appendChild(
-announcement
-);
+        console.error(
+            "ADVERTISEMENT ERROR:",
+            error
+        );
 
-}
 
-);
+        adCount.textContent =
+            "0";
 
-}
 
-catch(error){
+        adsList.innerHTML = `
 
-console.error(
-"ANNOUNCEMENT ERROR:",
-error
-);
+            <div class="no-ads">
 
+                ❌ Imeshindwa kupokea matangazo.
 
-announcementsList.innerHTML = `
+                <br><br>
 
-<div class="no-announcement">
+                Tafadhali hakikisha
+                table ya advertisements
+                inaruhusu public SELECT.
 
-❌ Imeshindwa kupakia matangazo.
+            </div>
 
-</div>
+        `;
 
-`;
-
-}
+    }
 
 }
 
@@ -1719,112 +1723,117 @@ announcementsList.innerHTML = `
 
 async function loadMaterials(){
 
-materialsList.innerHTML = `
+    materialsList.innerHTML = `
 
-<div class="empty">
+        <div class="empty">
 
-⏳ Inapakia materials...
+            ⏳ Inapakia materials...
 
-</div>
+        </div>
 
-`;
-
-resultsInfo.textContent =
-"⏳ Inapakia materials...";
+    `;
 
 
-try{
-
-const response =
-await fetch(
-
-SUPABASE_URL +
-"/rest/v1/materials?select=*&order=id.desc",
-
-{
-
-method:"GET",
-
-headers:{
-
-"apikey":
-SUPABASE_KEY,
-
-"Authorization":
-"Bearer " +
-SUPABASE_KEY,
-
-"Content-Type":
-"application/json"
-
-}
-
-}
-
-);
+    resultsInfo.textContent =
+        "⏳ Inapakia materials...";
 
 
-if(!response.ok){
+    try{
 
-const error =
-await response.text();
+        const response =
+        await fetch(
 
-throw new Error(error);
+            SUPABASE_URL +
+            "/rest/v1/materials?select=*&order=id.desc",
 
-}
+            {
 
+                method:"GET",
 
-const data =
-await response.json();
+                headers:{
 
+                    "apikey":
+                        SUPABASE_KEY,
 
-if(!Array.isArray(data)){
+                    "Authorization":
+                        "Bearer " +
+                        SUPABASE_KEY,
 
-throw new Error(
-"Database haikurudisha materials."
-);
+                    "Content-Type":
+                        "application/json"
 
-}
+                }
 
+            }
 
-allMaterials = data;
-
-
-materialCount.textContent =
-allMaterials.length;
-
-
-displayMaterials();
-
-}
-
-catch(error){
-
-console.error(
-"MATERIAL ERROR:",
-error
-);
+        );
 
 
-resultsInfo.textContent =
-"❌ Imeshindwa kupakia materials.";
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(error);
+
+        }
 
 
-materialsList.innerHTML = `
+        const data =
+            await response.json();
 
-<div class="empty">
 
-❌ Imeshindwa kupakia materials.
+        if(!Array.isArray(data)){
 
-<br><br>
+            throw new Error(
+                "Database haikurudisha materials."
+            );
 
-Tafadhali refresh ukurasa.
+        }
 
-</div>
 
-`;
+        allMaterials =
+            data;
 
-}
+
+        materialCount.textContent =
+            allMaterials.length;
+
+
+        displayMaterials();
+
+    }
+
+
+    catch(error){
+
+        console.error(
+            "MATERIAL ERROR:",
+            error
+        );
+
+
+        resultsInfo.textContent =
+            "❌ Imeshindwa kupokea materials.";
+
+
+        materialsList.innerHTML = `
+
+            <div class="empty">
+
+                ❌ Imeshindwa kupokea materials.
+
+                <br><br>
+
+                ${escapeHTML(
+                    error.message
+                )}
+
+            </div>
+
+        `;
+
+    }
 
 }
 
@@ -1835,266 +1844,267 @@ Tafadhali refresh ukurasa.
 
 function displayMaterials(){
 
-const searchText =
-normalizeText(
-searchInput.value
-);
+    const searchText =
+        normalizeText(
+            searchInput.value
+        );
 
 
-const selected =
-normalizeText(
-selectedCategory
-);
+    const selected =
+        normalizeText(
+            selectedCategory
+        );
 
 
-const filtered =
-allMaterials.filter(
-function(material){
+    const filtered =
+        allMaterials.filter(
+            function(material){
 
-const title =
-normalizeText(
-material.title
-);
+                const title =
+                    normalizeText(
+                        material.title
+                    );
 
 
-const course =
-normalizeText(
-material.course
-);
+                const course =
+                    normalizeText(
+                        material.course
+                    );
 
 
-const category =
-getMaterialCategory(
-material
-);
+                const category =
+                    getMaterialCategory(
+                        material
+                    );
 
 
-const description =
-normalizeText(
-material.description
-);
+                const description =
+                    normalizeText(
+                        material.description
+                    );
 
 
-const matchesSearch =
+                const matchesSearch =
 
-searchText === "" ||
+                    searchText === "" ||
 
-title.includes(searchText) ||
+                    title.includes(
+                        searchText
+                    ) ||
 
-course.includes(searchText) ||
+                    course.includes(
+                        searchText
+                    ) ||
 
-category.includes(searchText) ||
+                    category.includes(
+                        searchText
+                    ) ||
 
-description.includes(searchText);
+                    description.includes(
+                        searchText
+                    );
 
 
-const matchesCategory =
+                const matchesCategory =
 
-selected === "all" ||
+                    selected === "all" ||
 
-category === selected;
+                    category === selected;
 
 
-return(
-matchesSearch &&
-matchesCategory
-);
+                return (
+                    matchesSearch &&
+                    matchesCategory
+                );
 
-}
-);
+            }
+        );
 
 
-/* RESULTS */
+    if(
+        searchText !== "" ||
+        selected !== "all"
+    ){
 
-if(
-searchText !== "" ||
-selected !== "all"
-){
+        resultsInfo.textContent =
 
-resultsInfo.textContent =
+            "🔎 Matokeo: " +
+            filtered.length +
+            " kati ya " +
+            allMaterials.length +
+            " materials";
 
-"🔎 Matokeo: " +
-filtered.length +
-" kati ya " +
-allMaterials.length +
-" materials";
+    }
 
-}
+    else{
 
-else{
+        resultsInfo.textContent =
 
-resultsInfo.textContent =
+            "📚 Materials zote: " +
+            allMaterials.length;
 
-"📚 Materials zote: " +
-allMaterials.length;
+    }
 
-}
 
+    if(filtered.length === 0){
 
-/* NO RESULTS */
+        materialsList.innerHTML = `
 
-if(filtered.length === 0){
+            <div class="empty">
 
-materialsList.innerHTML = `
+                🔎 Hakuna material
+                iliyopatikana.
 
-<div class="empty">
+            </div>
 
-🔎 Hakuna material iliyopatikana.
+        `;
 
-<br><br>
+        return;
 
-Jaribu jina la material,
-course au category nyingine.
+    }
 
-</div>
 
-`;
+    materialsList.innerHTML = "";
 
-return;
 
-}
+    filtered.forEach(
+        function(material){
 
+            const item =
+                document.createElement(
+                    "div"
+                );
 
-materialsList.innerHTML = "";
 
+            item.className =
+                "material";
 
-/* CARDS */
 
-filtered.forEach(
-function(material){
+            const title =
+                material.title ||
+                "Material";
 
-const item =
-document.createElement("div");
 
+            const course =
+                material.course ||
+                "General";
 
-item.className =
-"material";
 
+            const category =
+                material.category ||
+                "Other";
 
-const title =
-material.title ||
-"Material";
 
+            const description =
+                material.description ||
+                "Hakuna maelezo";
 
-const course =
-material.course ||
-"General";
 
+            const fileUrl =
+                material.file_url ||
+                "#";
 
-const category =
-material.category ||
-"Other";
 
+            item.innerHTML = `
 
-const description =
-material.description ||
-"Hakuna maelezo";
+                <div class="material-icon">
 
+                    📚
 
-const fileUrl =
-material.file_url ||
-"#";
+                </div>
 
 
-item.innerHTML = `
+                <h3>
 
-<div class="material-icon">
+                    ${escapeHTML(title)}
 
-📚
+                </h3>
 
-</div>
 
+                <p>
 
-<h3>
+                    🎓
 
-${escapeHTML(title)}
+                    <strong>
+                        Course:
+                    </strong>
 
-</h3>
+                    ${escapeHTML(course)}
 
+                </p>
 
-<p>
 
-🎓
+                <p>
 
-<strong>
-Course:
-</strong>
+                    <span class="badge">
 
-${escapeHTML(course)}
+                        ${escapeHTML(category)}
 
-</p>
+                    </span>
 
+                    &nbsp;
 
-<p>
+                    <span class="badge free-badge">
 
-<span class="badge">
+                        🆓 FREE
 
-${escapeHTML(category)}
+                    </span>
 
-</span>
+                </p>
 
-&nbsp;
 
-<span class="badge free-badge">
+                <p>
 
-🆓 FREE
+                    ${escapeHTML(
+                        description
+                    )}
 
-</span>
+                </p>
 
-</p>
 
+                ${
+                    fileUrl !== "#"
 
-<p>
+                    ?
 
-${escapeHTML(description)}
+                    `
 
-</p>
+                    <a
+                        href="${escapeAttribute(fileUrl)}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="open-btn"
+                    >
 
+                        📖 Fungua Material
 
-${
-fileUrl !== "#"
+                    </a>
 
-?
+                    `
 
-`
+                    :
 
-<a
-href="${escapeAttribute(fileUrl)}"
-target="_blank"
-rel="noopener noreferrer"
-class="open-btn"
->
+                    `
 
-📖 Fungua Material
+                    <div class="empty">
 
-</a>
+                        📭 File haipatikani.
 
-`
+                    </div>
 
-:
+                    `
 
-`
+                }
 
-<div class="empty">
+            `;
 
-📭 File haipatikani.
 
-</div>
+            materialsList.appendChild(
+                item
+            );
 
-`
-
-}
-
-`;
-
-
-materialsList.appendChild(
-item
-);
-
-}
-
-);
+        }
+    );
 
 }
 
@@ -2104,12 +2114,12 @@ item
 ===================================================== */
 
 searchInput.addEventListener(
-"input",
-function(){
+    "input",
+    function(){
 
-displayMaterials();
+        displayMaterials();
 
-}
+    }
 );
 
 
@@ -2118,41 +2128,40 @@ displayMaterials();
 ===================================================== */
 
 filterButtons.forEach(
-function(button){
+    function(button){
 
-button.addEventListener(
-"click",
-function(){
+        button.addEventListener(
+            "click",
+            function(){
 
-filterButtons.forEach(
-function(btn){
+                filterButtons.forEach(
+                    function(btn){
 
-btn.classList.remove(
-"active"
-);
+                        btn.classList.remove(
+                            "active"
+                        );
 
-}
-);
-
-
-this.classList.add(
-"active"
-);
+                    }
+                );
 
 
-selectedCategory =
-this.getAttribute(
-"data-category"
-) ||
-"All";
+                this.classList.add(
+                    "active"
+                );
 
 
-displayMaterials();
+                selectedCategory =
+                    this.getAttribute(
+                        "data-category"
+                    ) || "All";
 
-}
-);
 
-}
+                displayMaterials();
+
+            }
+        );
+
+    }
 );
 
 
@@ -2160,12 +2169,12 @@ displayMaterials();
    START
 ===================================================== */
 
-loadMaterials();
+loadAdvertisements();
 
-loadAnnouncements();
+loadMaterials();
 
 </script>
 
 </body>
 
-   </html> 
+    </html> 
