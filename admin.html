@@ -177,29 +177,9 @@ textarea{
     resize:vertical;
 }
 
-/* ================= FREE INFO ================= */
+/* ================= BUTTON ================= */
 
-.free-info{
-
-    background:#e7f8ef;
-
-    color:#087f5b;
-
-    padding:14px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    margin-bottom:20px;
-
-    text-align:center;
-
-}
-
-/* ================= UPLOAD ================= */
-
-.upload-btn{
+.main-btn{
 
     width:100%;
 
@@ -228,7 +208,11 @@ textarea{
 
 }
 
-.upload-btn:disabled{
+.main-btn:hover{
+    opacity:.92;
+}
+
+.main-btn:disabled{
     opacity:.6;
     cursor:not-allowed;
 }
@@ -261,7 +245,7 @@ textarea{
     color:#c0392b;
 }
 
-/* ================= MATERIAL LIST ================= */
+/* ================= LIST ================= */
 
 .material-list{
 
@@ -348,7 +332,7 @@ textarea{
 
 }
 
-/* ================= BUTTONS ================= */
+/* ================= VIEW ================= */
 
 .view-btn{
 
@@ -373,10 +357,10 @@ textarea{
 }
 
 .view-btn:hover{
-
     background:#088395;
-
 }
+
+/* ================= DELETE ================= */
 
 .delete-btn{
 
@@ -401,10 +385,10 @@ textarea{
 }
 
 .delete-btn:hover{
-
     background:#c0392b;
-
 }
+
+/* ================= EMPTY ================= */
 
 .empty{
 
@@ -525,7 +509,9 @@ textarea{
 <div class="container">
 
 
-<!-- ================= UPLOAD CARD ================= -->
+<!-- =================================================
+     ADMIN INFORMATION
+================================================= -->
 
 <div class="card">
 
@@ -538,6 +524,14 @@ textarea{
 
     </div>
 
+</div>
+
+
+<!-- =================================================
+     UPLOAD MATERIAL
+================================================= -->
+
+<div class="card">
 
     <h2>
 
@@ -546,19 +540,7 @@ textarea{
     </h2>
 
 
-    <div class="free-info">
-
-        🆓 MATERIAL ZOTE NI BURE
-
-        <br>
-
-        Hakuna malipo yanayohitajika.
-
-    </div>
-
-
     <form id="uploadForm">
-
 
         <div class="form-grid">
 
@@ -696,14 +678,13 @@ textarea{
 
         <button
             type="submit"
-            class="upload-btn"
+            class="main-btn"
             id="uploadButton"
         >
 
             📤 Upload Material
 
         </button>
-
 
     </form>
 
@@ -728,7 +709,124 @@ textarea{
 </div>
 
 
-<!-- ================= MATERIALS ================= -->
+<!-- =================================================
+     ADVERTISEMENTS
+================================================= -->
+
+<div class="card">
+
+    <h2>
+
+        📢 Manage Advertisements
+
+    </h2>
+
+
+    <form id="adForm">
+
+        <div class="form-grid">
+
+
+            <!-- AD TITLE -->
+
+            <div class="form-group">
+
+                <label for="adTitle">
+
+                    Kichwa cha Tangazo
+
+                </label>
+
+                <input
+                    type="text"
+                    id="adTitle"
+                    placeholder="Mfano: 📢 Notes Mpya Zimefika!"
+                    required
+                >
+
+            </div>
+
+
+            <!-- LINK -->
+
+            <div class="form-group">
+
+                <label for="adLink">
+
+                    Link ya Tangazo
+
+                </label>
+
+                <input
+                    type="url"
+                    id="adLink"
+                    placeholder="https://wa.me/255680159556"
+                >
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group full">
+
+                <label for="adDescription">
+
+                    Maelezo ya Tangazo
+
+                </label>
+
+                <textarea
+                    id="adDescription"
+                    placeholder="Andika maelezo ya tangazo..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="main-btn"
+            id="adButton"
+        >
+
+            📢 Ongeza Tangazo
+
+        </button>
+
+    </form>
+
+
+    <div
+        id="adMessage"
+        class="message"
+    ></div>
+
+
+    <div
+        id="adsList"
+        class="material-list"
+        style="margin-top:25px;"
+    >
+
+        <div class="empty">
+
+            ⏳ Inapakia matangazo...
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     MATERIALS
+================================================= -->
 
 <div class="card">
 
@@ -773,14 +871,13 @@ const SUPABASE_KEY =
 
 
 /* =================================================
-   LOGIN SESSION
+   SESSION
 ================================================= */
 
 const ACCESS_TOKEN =
 localStorage.getItem(
     "matitohb_access_token"
 );
-
 
 const USER_DATA =
 localStorage.getItem(
@@ -861,6 +958,26 @@ else{
 
 
 /* =================================================
+   HEADERS
+================================================= */
+
+function getHeaders(){
+
+    return {
+
+        "apikey":
+            SUPABASE_KEY,
+
+        "Authorization":
+            "Bearer " +
+            ACCESS_TOKEN
+
+    };
+
+}
+
+
+/* =================================================
    MESSAGE
 ================================================= */
 
@@ -877,26 +994,6 @@ function showMessage(
 
     message.style.display =
         "block";
-
-}
-
-
-/* =================================================
-   HEADERS
-================================================= */
-
-function getHeaders(){
-
-    return {
-
-        "apikey":
-            SUPABASE_KEY,
-
-        "Authorization":
-            "Bearer " +
-            ACCESS_TOKEN
-
-    };
 
 }
 
@@ -1034,7 +1131,6 @@ async function loadMaterials(){
                     <p>
 
                         🎓
-
                         <strong>
                             Course:
                         </strong>
@@ -1072,7 +1168,6 @@ async function loadMaterials(){
 
                     ${
                         fileUrl !== "#"
-
                         ?
 
                         `
@@ -1192,8 +1287,6 @@ form.addEventListener(
             .files[0];
 
 
-        /* VALIDATE FILE */
-
         if(!file){
 
             showMessage(
@@ -1215,10 +1308,6 @@ form.addEventListener(
 
         try{
 
-            /* =========================
-               FILE NAME
-            ========================= */
-
             const safeName =
                 file.name
                 .replace(
@@ -1235,7 +1324,7 @@ form.addEventListener(
 
 
             /* =========================
-               STORAGE UPLOAD
+               STORAGE
             ========================= */
 
             const uploadResponse =
@@ -1284,10 +1373,6 @@ form.addEventListener(
             }
 
 
-            /* =========================
-               PUBLIC URL
-            ========================= */
-
             const fileUrl =
                 SUPABASE_URL +
                 "/storage/v1/object/public/matitohb/" +
@@ -1295,8 +1380,7 @@ form.addEventListener(
 
 
             /* =========================
-               DATABASE INSERT
-               EVERYTHING IS FREE
+               DATABASE
             ========================= */
 
             const databaseResponse =
@@ -1362,15 +1446,11 @@ form.addEventListener(
             );
 
 
-            /* DATABASE ERROR */
-
             if(!databaseResponse.ok){
 
                 const error =
                     await databaseResponse.text();
 
-
-                /* DELETE STORAGE FILE */
 
                 await fetch(
 
@@ -1406,11 +1486,9 @@ form.addEventListener(
             }
 
 
-            /* SUCCESS */
-
             showMessage(
 
-                "✅ Material imepakiwa vizuri na sasa ni FREE!",
+                "✅ FREE material imehifadhiwa vizuri!",
 
                 "success"
 
@@ -1483,10 +1561,6 @@ async function deleteMaterial(
 
     try{
 
-        /* =========================
-           DELETE DATABASE
-        ========================= */
-
         const response =
         await fetch(
 
@@ -1530,9 +1604,7 @@ async function deleteMaterial(
         }
 
 
-        /* =========================
-           DELETE STORAGE
-        ========================= */
+        /* DELETE STORAGE */
 
         if(fileUrl){
 
@@ -1622,6 +1694,544 @@ async function deleteMaterial(
 
 
 /* =================================================
+   ADVERTISEMENT ELEMENTS
+================================================= */
+
+const adForm =
+document.getElementById(
+    "adForm"
+);
+
+const adButton =
+document.getElementById(
+    "adButton"
+);
+
+const adMessage =
+document.getElementById(
+    "adMessage"
+);
+
+const adsList =
+document.getElementById(
+    "adsList"
+);
+
+
+/* =================================================
+   AD MESSAGE
+================================================= */
+
+function showAdMessage(
+    text,
+    type
+){
+
+    adMessage.textContent =
+        text;
+
+    adMessage.className =
+        "message " + type;
+
+    adMessage.style.display =
+        "block";
+
+}
+
+
+/* =================================================
+   LOAD ADVERTISEMENTS
+================================================= */
+
+async function loadAdvertisements(){
+
+    adsList.innerHTML = `
+
+        <div class="empty">
+
+            ⏳ Inapakia matangazo...
+
+        </div>
+
+    `;
+
+
+    try{
+
+        const response =
+        await fetch(
+
+            SUPABASE_URL +
+            "/rest/v1/advertisements?select=*&order=id.desc",
+
+            {
+
+                method:"GET",
+
+                headers:getHeaders()
+
+            }
+
+        );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(
+                "Database: " +
+                error
+            );
+
+        }
+
+
+        const ads =
+            await response.json();
+
+
+        if(
+            !ads ||
+            ads.length === 0
+        ){
+
+            adsList.innerHTML = `
+
+                <div class="empty">
+
+                    📢 Hakuna matangazo bado.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        adsList.innerHTML = "";
+
+
+        ads.forEach(
+            function(ad){
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "material";
+
+
+                const title =
+                    ad.title ||
+                    "Tangazo";
+
+
+                const description =
+                    ad.description ||
+                    "";
+
+
+                const link =
+                    ad.link ||
+                    "";
+
+
+                item.innerHTML = `
+
+                    <div class="material-icon">
+
+                        📢
+
+                    </div>
+
+
+                    <h3>
+
+                        ${escapeHTML(title)}
+
+                    </h3>
+
+
+                    <p>
+
+                        ${escapeHTML(
+                            description
+                        )}
+
+                    </p>
+
+
+                    ${
+                        link
+                        ?
+
+                        `
+
+                        <a
+                            href="${escapeAttribute(link)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="view-btn"
+                        >
+
+                            🔗 Fungua Link
+
+                        </a>
+
+                        `
+
+                        :
+
+                        ""
+
+                    }
+
+
+                    <button
+                        class="delete-btn"
+                        onclick="deleteAdvertisement(
+                            ${Number(ad.id)}
+                        )"
+                    >
+
+                        🗑️ Futa Tangazo
+
+                    </button>
+
+                `;
+
+
+                adsList.appendChild(
+                    item
+                );
+
+            }
+        );
+
+    }
+
+
+    catch(error){
+
+        console.error(
+            "ADS LOAD ERROR:",
+            error
+        );
+
+
+        adsList.innerHTML = `
+
+            <div class="empty">
+
+                ❌ Imeshindwa kupata matangazo.
+
+                <br><br>
+
+                ${escapeHTML(
+                    error.message
+                )}
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =================================================
+   ADD ADVERTISEMENT
+================================================= */
+
+adForm.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const title =
+            document
+            .getElementById(
+                "adTitle"
+            )
+            .value
+            .trim();
+
+
+        const description =
+            document
+            .getElementById(
+                "adDescription"
+            )
+            .value
+            .trim();
+
+
+        const link =
+            document
+            .getElementById(
+                "adLink"
+            )
+            .value
+            .trim();
+
+
+        if(!title){
+
+            showAdMessage(
+                "❌ Weka kichwa cha tangazo.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(!description){
+
+            showAdMessage(
+                "❌ Weka maelezo ya tangazo.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        adButton.disabled =
+            true;
+
+
+        adButton.textContent =
+            "⏳ Inaongeza...";
+
+
+        try{
+
+            const response =
+            await fetch(
+
+                SUPABASE_URL +
+                "/rest/v1/advertisements",
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            "Bearer " +
+                            ACCESS_TOKEN,
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Prefer":
+                            "return=minimal"
+
+                    },
+
+                    body:JSON.stringify({
+
+                        title:
+                            title,
+
+                        description:
+                            description,
+
+                        link:
+                            link || null
+
+                    })
+
+                }
+
+            );
+
+
+            if(!response.ok){
+
+                const error =
+                    await response.text();
+
+                throw new Error(
+                    "Database: " +
+                    error
+                );
+
+            }
+
+
+            showAdMessage(
+
+                "✅ Tangazo limeongezwa vizuri!",
+
+                "success"
+
+            );
+
+
+            adForm.reset();
+
+
+            await loadAdvertisements();
+
+        }
+
+
+        catch(error){
+
+            console.error(
+                "ADD AD ERROR:",
+                error
+            );
+
+
+            showAdMessage(
+
+                "❌ " +
+                error.message,
+
+                "error"
+
+            );
+
+        }
+
+
+        finally{
+
+            adButton.disabled =
+                false;
+
+
+            adButton.textContent =
+                "📢 Ongeza Tangazo";
+
+        }
+
+    }
+);
+
+
+/* =================================================
+   DELETE ADVERTISEMENT
+================================================= */
+
+async function deleteAdvertisement(
+    id
+){
+
+    const confirmed =
+        confirm(
+            "Una uhakika unataka kufuta tangazo hili?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    try{
+
+        const response =
+        await fetch(
+
+            SUPABASE_URL +
+            "/rest/v1/advertisements?id=eq." +
+            encodeURIComponent(id),
+
+            {
+
+                method:"DELETE",
+
+                headers:{
+
+                    "apikey":
+                        SUPABASE_KEY,
+
+                    "Authorization":
+                        "Bearer " +
+                        ACCESS_TOKEN,
+
+                    "Prefer":
+                        "return=minimal"
+
+                }
+
+            }
+
+        );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(
+                "Database: " +
+                error
+            );
+
+        }
+
+
+        showAdMessage(
+
+            "✅ Tangazo limefutwa.",
+
+            "success"
+
+        );
+
+
+        await loadAdvertisements();
+
+    }
+
+
+    catch(error){
+
+        console.error(
+            "DELETE AD ERROR:",
+            error
+        );
+
+
+        showAdMessage(
+
+            "❌ Imeshindwa kufuta: " +
+            error.message,
+
+            "error"
+
+        );
+
+    }
+
+}
+
+
+/* =================================================
    LOGOUT
 ================================================= */
 
@@ -1631,9 +2241,11 @@ function logout(){
         "matitohb_access_token"
     );
 
+
     localStorage.removeItem(
         "matitohb_refresh_token"
     );
+
 
     localStorage.removeItem(
         "matitohb_user"
@@ -1657,8 +2269,10 @@ function escapeHTML(text){
             "div"
         );
 
+
     div.textContent =
         String(text || "");
+
 
     return div.innerHTML;
 
@@ -1668,11 +2282,31 @@ function escapeHTML(text){
 function escapeAttribute(text){
 
     return String(text || "")
-        .replace(/&/g,"&amp;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#39;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;");
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#39;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        );
 
 }
 
@@ -1680,11 +2314,31 @@ function escapeAttribute(text){
 function escapeJS(text){
 
     return String(text || "")
-        .replace(/\\/g,"\\\\")
-        .replace(/'/g,"\\'")
-        .replace(/"/g,"&quot;")
-        .replace(/\n/g,"\\n")
-        .replace(/\r/g,"\\r");
+
+        .replace(
+            /\\/g,
+            "\\\\"
+        )
+
+        .replace(
+            /'/g,
+            "\\'"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /\n/g,
+            "\\n"
+        )
+
+        .replace(
+            /\r/g,
+            "\\r"
+        );
 
 }
 
@@ -1694,6 +2348,8 @@ function escapeJS(text){
 ================================================= */
 
 loadMaterials();
+
+loadAdvertisements();
 
 </script>
 
